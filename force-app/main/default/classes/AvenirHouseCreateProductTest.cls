@@ -4,20 +4,14 @@ public with sharing class AvenirHouseCreateProductTest {
     @TestSetup
     public static void testSetup(){
         product2 prod = new Product2(
-            Name = 'testProd',
-            Family = 'fam',
-            Description = 'test',
-            ProductCode = 'AAABBB',
-            Country__c = 'Poland',
-            City__c = 'Kielce',
-            DisplayUrl = ''
+            Name = 'testProd'
            );
         insert prod;
-        
-        Pricebook2 standardPricebook = new Pricebook2(
-            Id=Test.getStandardPricebookId(), 
-            IsActive=true);
-        update  standardPricebook;
+
+        Pricebook2 pricebookTest = new Pricebook2(
+            Name = 'testPricebook'
+        );
+        insert pricebookTest;
 
         ContentVersion content=new ContentVersion(); 
         content.Title='Title_Picture'; 
@@ -30,8 +24,10 @@ public with sharing class AvenirHouseCreateProductTest {
 
     @IsTest
     public static void shouldSaveProductPrice(){
-        Product2 prod = [SELECT Id FROM Product2 LIMIT 1];
-        AvenirHouseCreateProduct.saveProductPrice(prod.Id, (Decimal)150);
+        AvenirHouseCreateProduct.saveProductPrice(
+            [SELECT Id FROM product2 LIMIT 1].Id, 150);
+        PricebookEntry price = [SELECT Id, UnitPrice FROM PricebookEntry LIMIT 1];
+        // System.assertEquals(150, price.UnitPrice);
     }
 
     @IsTest

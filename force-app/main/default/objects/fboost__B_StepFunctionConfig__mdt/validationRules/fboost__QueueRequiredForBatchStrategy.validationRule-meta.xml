@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>fboost__QueueRequiredForBatchStrategy</fullName>
-    <active>true</active>
-    <description>The queue is required for the Batch async execution strategy</description>
-    <errorConditionFormula>fboost__Async__c &amp;&amp; ISPICKVAL(fboost__AsyncStrategy__c,&apos;Batch&apos;) &amp;&amp; NOT(fboost__Queued__c)</errorConditionFormula>
-    <errorDisplayField>fboost__Queued__c</errorDisplayField>
-    <errorMessage>The queue is required for the Batch async execution strategy</errorMessage>
-</ValidationRule>

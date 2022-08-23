@@ -1,12 +1,15 @@
 public with sharing class AvenirHouseCreateProduct {
+    public AvenirHouseCreateProduct() {
+
+    }
 
     @AuraEnabled
     public static void saveProductPrice(String productId, Decimal productPrice){
-        Pricebook2 priceBookId = [SELECT Id FROM Pricebook2 WHERE IsStandard = true LIMIT 1];
+
         PricebookEntry newProductEntery = new PricebookEntry();
         newProductEntery.Product2Id = productId;
         newProductEntery.UnitPrice = (Decimal) productPrice;
-        newProductEntery.Pricebook2Id = priceBookId.Id;
+        newProductEntery.Pricebook2Id = '01s7Q00000A6q1sQAB';
         newProductEntery.IsActive = true;
 
         insert newProductEntery;

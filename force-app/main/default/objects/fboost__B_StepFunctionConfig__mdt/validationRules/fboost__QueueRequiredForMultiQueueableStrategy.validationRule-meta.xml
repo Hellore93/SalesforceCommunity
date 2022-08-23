@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>fboost__QueueRequiredForMultiQueueableStrategy</fullName>
-    <active>true</active>
-    <description>The queue is required for the Multi Queueable async execution strategy</description>
-    <errorConditionFormula>fboost__Async__c &amp;&amp; ISPICKVAL(fboost__AsyncStrategy__c,&apos;MultiQueueable&apos;) &amp;&amp; NOT(fboost__Queued__c)</errorConditionFormula>
-    <errorDisplayField>fboost__Queued__c</errorDisplayField>
-    <errorMessage>The queue is required for the MultiQueueable async execution strategy</errorMessage>
-</ValidationRule>

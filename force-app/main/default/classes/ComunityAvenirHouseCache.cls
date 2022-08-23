@@ -3,6 +3,8 @@ public with sharing class ComunityAvenirHouseCache extends ProductWithPriceWrapp
     @AuraEnabled(cacheable=true)
     public static String getCache(){
         List<ShoppingCartWrapper> wrapperProductList = (List<ShoppingCartWrapper> ) Cache.Session.get('HouseCart');
+        System.debug(wrapperProductList);
+        // return wrapperProductList;
         return JSON.serialize(wrapperProductList);
     }
 
@@ -13,6 +15,7 @@ public with sharing class ComunityAvenirHouseCache extends ProductWithPriceWrapp
         ShoppingCartWrapper newWrap = new ShoppingCartWrapper(productToCart, startDate, endDate, extraOption);        
 
         List<ShoppingCartWrapper> wrapperProductList = (List<ShoppingCartWrapper> ) Cache.Session.get('HouseCart');
+        // List<productWithPriceWrapper> wrapperProductList = (List<productWithPriceWrapper> ) Cache.Session.get('HouseCart');
         if(wrapperProductList == null){
             wrapperProductList = new List<ShoppingCartWrapper>();
             wrapperProductList.add(newWrap);

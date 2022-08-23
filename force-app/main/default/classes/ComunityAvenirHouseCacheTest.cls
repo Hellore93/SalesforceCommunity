@@ -21,7 +21,6 @@ public with sharing class ComunityAvenirHouseCacheTest {
 
 
         PricebookEntry standardPrice = new PricebookEntry(
-            
             UnitPrice=500,
             Product2Id=prod.Id, 
             Pricebook2Id=standardPricebook.Id, 
@@ -32,14 +31,11 @@ public with sharing class ComunityAvenirHouseCacheTest {
 
     @IsTest
     public static void shouldGetCache(){
-        Cache.SessionPartition partition = Cache.Session.getPartition('local.HouseCart');
-        System.debug(partition);
         ComunityAvenirHouseCache.getCache();
     }
 
     @IsTest
     public static void shouldAddToCache(){
-        Cache.SessionPartition partition = Cache.Session.getPartition('HouseCart');
         Product2 prod = [Select Id FROM Product2 LIMIT 1];
         PricebookEntry standardPricebook = [SELECT Id FROM PricebookEntry LIMIT 1];
         List<PricebookEntry> discountPricebook = [SELECT Id, UnitPrice, Product2Id, Pricebook2Id FROM PricebookEntry LIMIT 1];

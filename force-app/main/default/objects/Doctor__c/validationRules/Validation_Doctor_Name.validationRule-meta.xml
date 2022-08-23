@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Validation_Doctor_Name</fullName>
-    <active>true</active>
-    <errorConditionFormula>ISBLANK(Name)</errorConditionFormula>
-    <errorMessage>You should write Doctor Last Name</errorMessage>
-</ValidationRule>

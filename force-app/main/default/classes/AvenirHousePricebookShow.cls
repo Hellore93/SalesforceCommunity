@@ -20,8 +20,7 @@ public with sharing class AvenirHousePricebookShow {
 
     @AuraEnabled
     public static Map<String, Object> getStandardPrice(){
-        Pricebook2 pricebook = [SELECT Id FROM Pricebook2 WHERE IsStandard = true LIMIT 1];
-        List<PricebookEntry> standardPriceList = [SELECT Id, Name, Pricebook2Id, Product2Id, UnitPrice, IsActive FROM PricebookEntry WHERE Pricebook2Id = :pricebook.Id LIMIT 200];
+        List<PricebookEntry> standardPriceList = [SELECT Id, Name, Pricebook2Id, Product2Id, UnitPrice, IsActive FROM PricebookEntry WHERE Pricebook2Id = '01s7Q00000A6q1sQAB' LIMIT 200];
         Map<String, Object> mapOfStandardPrice = new Map<String, Object>();
         for(PricebookEntry item : standardPriceList){
             mapOfStandardPrice.put(item.Product2Id, item);
@@ -36,8 +35,6 @@ public with sharing class AvenirHousePricebookShow {
         List<PricebookEntry> pricebookToUpdate = new List<PricebookEntry>();
         for(PricebookEntry item : priceUpdate){
             PricebookEntry obj =  (PricebookEntry) standardPriceMap.get(item.Product2Id);
-            System.debug(item);
-            System.debug(obj);
             if(item.UnitPrice > obj.UnitPrice){
                 PricebookEntry newEditObject = new PricebookEntry();
                 newEditObject.Id = item.Id;
@@ -56,8 +53,7 @@ public with sharing class AvenirHousePricebookShow {
 
     @AuraEnabled
     public static List<PricebookEntry> addNewProductToPricebook(String pricebookId){
-        Pricebook2 pricebook = [SELECT Id FROM Pricebook2 WHERE IsStandard = true LIMIT 1];
-        List<PricebookEntry> product = [SELECT Id, Name, Product2Id, Pricebook2.Name, Pricebook2.Description, UnitPrice FROM PricebookEntry WHERE IsActive = true AND Pricebook2Id = :pricebook.Id LIMIT 200];
+        List<PricebookEntry> product = [SELECT Id, Name, Product2Id, Pricebook2.Name, Pricebook2.Description, UnitPrice FROM PricebookEntry WHERE IsActive = true AND Pricebook2Id = '01s7Q00000A6q1sQAB' LIMIT 200];
         List<PricebookEntry> existProduct = [SELECT Id, Name, Product2Id, Pricebook2.Name, Pricebook2.Description, UnitPrice FROM PricebookEntry WHERE IsActive = true AND Pricebook2Id = :pricebookId LIMIT 200];
     
         Map<String, Object> mapOfExistProduct = new Map<String, Object>();
