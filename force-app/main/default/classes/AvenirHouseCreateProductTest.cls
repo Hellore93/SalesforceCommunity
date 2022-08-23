@@ -27,6 +27,14 @@ public with sharing class AvenirHouseCreateProductTest {
             );
         insert standardPrice;
 
+        PricebookEntry discountPrice = new PricebookEntry(
+            UnitPrice=400,
+            Product2Id=prod.Id, 
+            Pricebook2Id=[SELECT Id FROM Pricebook2 WHERE Name ='testPricebook'].Id, 
+            IsActive=true
+            );
+        insert discountPrice;
+
 
         ContentVersion content=new ContentVersion(); 
         content.Title='Title_Picture'; 

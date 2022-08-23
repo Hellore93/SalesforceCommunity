@@ -11,7 +11,7 @@ public with sharing class AvenirHousePricebookShowTest {
         Pricebook2 standartPricebook = new Pricebook2(
             Id=Test.getStandardPricebookId(), 
             IsActive=true);
-        update  standartPricebook;
+        update standartPricebook;
 
         Pricebook2 pricebook1 = new Pricebook2(
             Name = 'testPricebook1'
@@ -30,6 +30,14 @@ public with sharing class AvenirHousePricebookShowTest {
             IsActive=true
             );
         insert standartPrice;
+
+        PricebookEntry discountPrice = new PricebookEntry(
+            UnitPrice=400,
+            Product2Id=prod.Id, 
+            Pricebook2Id=[SELECT Id FROM Pricebook2 WHERE Name ='testPricebook1'].Id, 
+            IsActive=true
+            );
+        insert discountPrice;
 
     }
 
