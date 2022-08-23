@@ -1,0 +1,18 @@
+<template>
+
+<div class="addCommentSection">
+    <c-avenir-house-details-commentary-star onratingchange={onStarRatingClick} rating={userRating}></c-avenir-house-details-commentary-star>
+    <lightning-textarea max-length="500" name="input1" label="Commentary field" value={userComment}></lightning-textarea>
+    <lightning-button if:false={userComment} class="saveCommentButton" label="save" onclick={saveComment}></lightning-button>
+
+    <div class="editSection" if:true={userComment}>
+        <lightning-button class="saveCommentButton" label="Edit" onclick={saveComment}></lightning-button>
+        <lightning-button class="saveCommentButton" label="Delete" onclick={getDeleteEvent}></lightning-button>
+    </div>
+</div>
+
+<template for:each={commentaryList} for:item='com'>
+    <c-avenir-house-details-commentary-printcomment key={com.id} oneventafterdelete={getDeleteEvent} single-comment={com}></c-avenir-house-details-commentary-printcomment>
+</template>
+
+</template>

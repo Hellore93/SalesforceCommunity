@@ -1,0 +1,85 @@
+<template>
+    <lightning-card class="classWrapper">
+        <h1>Order</h1>
+        <div class="content">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+            <th class="name">
+                <div>Name</div>
+            </th>
+            <th class="name">
+                <div>Start Date</div>
+            </th>
+            <th class="name">
+                <div>End Date</div>
+            </th>            
+            <th class="name">
+                <div>Price</div>
+            </th>
+        <tbody>
+        <template for:each={orderList} for:item="order">
+           <tr key={order.Id}>
+            <td class="name" key={order.Id}>
+                <div key={order.Id}>{order.prod.product.Name}</div>
+            </td>
+            <td class="name" key={order.Id}>
+                <div key={order.Id}>{order.startDate}</div>
+            </td>
+            <td class="name" key={order.Id}>
+                <div key={order.Id}>{order.endDate}</div>
+            </td>            
+            <td class="name" key={order.Id}>
+                <div class="cost" key={order.Id}>{order.cost} €</div>
+            </td>    
+        </tr>    
+        </template>
+</tbody>
+</table>
+<div class="paymentSection">
+    <div class="subtotal">Subtotal: {totalPrice} €</div>
+
+    <div class="payment">
+        <span class="personalTabel">Personal Data</span>
+        <div class="payDate">
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York" style="margin-bottom: 15px;">
+        </div>
+    </div>
+
+    <div class="payment">
+        <img src={visaIcon} class="visaIcon" />
+
+        <div class="payDate">
+            <label for="ccnum">Credit card number</label>
+            <lightning-input variant="label-hidden" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required></lightning-input>
+            <label for="expmonth">Exp Month</label>
+            <lightning-input variant="label-hidden" class="expmonth" type="text" id="expmonth" name="expmonth" placeholder="September" required></lightning-input>
+            <label for="expmonth">Holder Name</label>
+            <lightning-input variant="label-hidden" placeholder="John Doe" required></lightning-input>
+        </div>
+
+        <div class="cvvClass">
+            <label for="cvv">CVV</label>
+            <lightning-input onchange={disableButton} variant="label-hidden" type="text" id="cvv" name="cvv" placeholder="352" required></lightning-input>
+        </div>
+
+        <lightning-button disabled={buttonDisable} variant="success" label="Rent" title="Successful action" onclick={rent} class="slds-m-left_x-small "></lightning-button>
+
+    </div>
+
+    <div class="termWrapper">
+        <div class="termCondi">Terms & Conditions</div>
+        <p class="review">Clicking on "I Agree" means you agree to GoDaddy's <a href="terms/show">Terms & Conditions</a>.</p>
+        <p class="review"><strong>Products automatically</strong> renew until cancelled, and are billed to your payment method on file. Turn off auto-renew in your GoDaddy account.</p>
+        <p class="agreed">I've read and agreed to the <a href="terms/show">Term & Conditions</a>.</p>
+    </div>
+</div>
+</div>
+</lightning-card>
+
+</template>

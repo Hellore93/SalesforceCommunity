@@ -1,0 +1,59 @@
+<aura:component description="AvenirHousePricebookDiscount" implements="force:appHostable" controller="AvenirHousePricebookDiscount">
+    <aura:attribute name="parent" type="Aura.Component" />
+
+    <aura:attribute name="listClickedProduct" type="List" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:attribute name="mycolumns" type="List" />
+    <aura:attribute name="mydata" type="Object" />
+    <aura:attribute name="discountValue" type="Integer" />
+    <aura:attribute name="selectedObjectToDiscount" type="List" default="[]" />
+
+    <aura:attribute name="newPricebook" type="List" />
+
+
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_medium">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">New Pricebook</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                <div class="newPricebookSection">
+                    <lightning:input class="pricebookName" name="discountInputName" aura:id="discountInputName" type="text" label="Price Book Name" required="true" value="{!v.newPricebook.Name}" />
+                    <lightning:input class="pricebookDescription" name="discountInputDescription" aura:id="pricebookDescription" type="text" label="Description" value="{!v.newPricebook.Description}" />
+                    <ui:inputCheckbox aura:id="pricebookActive" label="Active" />
+                    <div class="discountDataSection">
+                        <div class="dateInput">
+                            <ui:inputDate required="true" aura:id="startDate" label="Discount start Date" value="{!v.newPricebook.StartDate}" displayDatePicker="true" />
+                        </div>
+                        <div class="dateInput">
+                            <ui:inputDate required="true" aura:id="endDate" label="Discount end Date" value="{!v.newPricebook.EndDate}" displayDatePicker="true" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <h3 class="discountSettingsHeader">Discount settings</h3>
+
+                <div class="discountSection">
+                    <lightning:select aura:id="selectDiscount" class="selectOption" name="select1" variant="label-hidden">
+                        <option value="percent">Discount by percent!</option>
+                        <option value="value">Discount by value</option>
+                    </lightning:select>
+                    <lightning:input aura:id="discountValue" class="discountInput" name="discountInput" type="number" value="v.discountValue" />
+                    <lightning:button class="discountButton" variant="brand" label="Accept Discount" title="Brand action" onclick="{! c.acceptDiscount }" />
+                </div>
+
+                <lightning:datatable class="productRow" data="{! v.listClickedProduct }" columns="{! v.mycolumns }" keyField="Id" hideCheckboxColumn="false" onrowselection="{! c.selectedObject }" />
+
+            </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick="{!c.closeModal}">Close</button>
+                <lightning:button class="discountButton" variant="brand" label="Save" title="Brand action" onclick="{!c.savePricebook}" />
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+
+</aura:component>

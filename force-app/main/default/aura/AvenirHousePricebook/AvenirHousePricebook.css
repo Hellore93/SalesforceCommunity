@@ -1,0 +1,26 @@
+.THIS {}
+
+.THIS .searchNameSection {
+    width: 40%;
+}
+
+.THIS .searchSection {
+    display: flex;
+    flex-direction: row;
+}
+
+.THIS .buttonSection {
+    margin: auto;
+}
+
+.THIS .nameSearch {
+    margin-left: 20px;
+}
+
+.THIS .productTable {
+    width: 95vw;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 10px;
+}

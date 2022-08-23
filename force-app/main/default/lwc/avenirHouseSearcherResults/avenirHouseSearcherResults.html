@@ -1,0 +1,57 @@
+<template>    
+    <div class="typeSearchSection">
+        <div id="House" class="iconWrapper" onclick={house}>
+            <img src={House} />
+            <p class='cls HouseP'>House</p>
+        </div>
+
+        <div id="Penthouse" class="iconWrapper" onclick={house}>
+            <img src={Penthouse} />
+            <p class='cls PenthouseP'>Penthouse</p>
+        </div>
+
+        <div id="Island" class="iconWrapper" onclick={house}>
+            <img src={Island} />
+            <p class='cls IslandP'>Island</p>
+        </div>
+
+        <div id="Apartment" class="iconWrapper" onclick={house}>
+            <img src={Apartment} />
+            <p class='cls ApartmentP'>Apartament</p>
+        </div>
+
+        <div id="Mountain" class="iconWrapper" onclick={house}>
+            <img src={Mountain} />
+            <p class='cls MountainP'>Mountain</p>
+        </div>
+</div>
+
+
+<div class="bodySection">
+<div class="settingsSection">
+    <lightning-button-icon icon-name={searchSectionArrow}  alternative-text="Settings" title="Settings" onclick={serachSection}></lightning-button-icon>
+    <div if:true={settingsBool} class="settings">
+        <p class="filterheader">Filter by data avilable</p>
+        <lightning-input class="startDate" type="date" name="Start Date" label="Start date" onchange={getStartDate} value={startDate}></lightning-input>
+        <lightning-input class="endDate" type="date" name="input1" label="End date" onchange={getEndDate} value={endDate}></lightning-input>
+        <button class="slds-button slds-button_neutral searchButton" onclick={filterSearch}>Filter</button>
+        <button class="slds-button slds-button_neutral searchButton" onclick={clear}>Clear</button>
+        
+    </div>
+</div>
+
+    <div class="iterator">        
+    <template if:true={results} for:each={results} for:item="house" for:index="index">
+        <c-avenir-house-searcher-results-single-object key={house.id} single-house-object={house} ></c-avenir-house-searcher-results-single-object>
+    </template>
+</div>
+</div>
+<div class="pagination">
+    <lightning-button variant="brand-outline" label="Back" onclick={back} class="slds-m-left_x-small slds-m-horizontal_x-small"></lightning-button>
+    <div class="combo">
+        <lightning-combobox variant="label-hidden" name="Item per page" label="Item per page" placeholder="Select item per page" options={options} onchange={handleChange}></lightning-combobox>
+    </div>
+    <lightning-button variant="brand-outline" label="Next" onclick={next} class="slds-m-left_x-small slds-m-horizontal_x-small"></lightning-button>
+</div>
+
+</template>

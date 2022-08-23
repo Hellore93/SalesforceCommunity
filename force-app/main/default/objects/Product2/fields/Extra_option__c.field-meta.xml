@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_option__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>It&apos;s an extra option adding to rent product like a go for a walk with pet.</description>
+    <externalId>false</externalId>
+    <label>Extra option</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

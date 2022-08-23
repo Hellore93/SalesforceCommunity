@@ -1,0 +1,34 @@
+<template>
+    <div class="wrapper" if:true={commentVisible}>
+        <ul class="slds-feed__list content">
+          <li class="slds-feed__item">
+            <article class="">
+              <header class="slds-post__header slds-media">
+                <lightning-avatar
+                variant="circle"
+                src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"
+                fallback-icon-name="standard:person_account"
+                alternative-text={singleComment.CreatedBy.Name}
+                ></lightning-avatar>
+                <div class="slds-media__body personaly">
+                  <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                    <p>
+                      <a class="name">{singleComment.CreatedBy.Name}</a> 
+                    </p>                    
+                  </div>
+                  <p class="slds-text-body_small">
+                    <a title="Click for single-item view of this post" class="slds-text-link_reset comTime">{itemData}</a>
+                  </p>
+                </div>                
+              </header>
+              <div class="slds-post__content slds-text-longform">
+                <c-avenir-house-details-commentary-star onratingchange={onStarRatingClick} read-only-star="true" rating={singleComment.rating__c}></c-avenir-house-details-commentary-star>
+                <p class="comment">{singleComment.Commentary__c}</p>
+                <p if:false={singleComment.Approval__c} class="approveComment">Every user see this comment after approve by admin!</p>                
+            </div>
+
+            </article>
+          </li>
+        </ul>
+      </div>
+</template>

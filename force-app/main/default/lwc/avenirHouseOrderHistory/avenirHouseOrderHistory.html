@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <h1>Booking History</h1>
+        <div class="orderFilter">
+            <lightning-button variant="success" label="Past booking" onclick={pastBooking} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="success" label="Actual booking" onclick={actualBooking} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="success" label="Future booking" onclick={futureBooking} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="success" label="All booking" onclick={allBooking} class="slds-m-left_x-small"></lightning-button>
+        </div>
+        <template if:true={orderList}>
+        <template for:each={orderList} for:item="order">
+            <c-avenir-house-order-history-single-item new-order={newOrder} key={order.id} single-order={order} ></c-avenir-house-order-history-single-item>
+        </template>
+</template>
+<p class="emptyList" if:true={emptyList}>You haven't orders yet!</p>
+</lightning-card>
+</template>

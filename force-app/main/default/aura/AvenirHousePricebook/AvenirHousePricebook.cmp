@@ -1,0 +1,39 @@
+<aura:component description="AvenirHousePriceBook" implements="force:appHostable" controller="AvenirHousePricebook" access="global">
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:attribute name="mycolumns" type="List" />
+    <aura:attribute name="mydata" type="Object" />
+    <aura:attribute name="houseName" type="String" />
+    <aura:attribute name="newPricebook" type="Boolean" default="false" />
+    <aura:attribute name="showPricebook" type="Boolean" default="false" />
+
+    <aura:method name="closeModalEvent" action="{!c.closeModal}" access="public">
+        <aura:attribute name="closeModalAttribute" type="Boolean" />
+    </aura:method>
+    <aura:attribute name="selectedObjectToDiscount" type="List" default="[]" />
+
+    <lightning:card title="Search Section">
+        <div class="searchSection">
+            <div class="searchNameSection" onkeyup="{! c.startSearch }">
+                <lightning:input class="nameSearch" aura:id="enter-house-name" name="enter-search" label="Write house name and press enter" type="search" />
+            </div>
+            <div class="buttonSection">
+                <lightning:button class="newAccountButton" variant="brand" label="New Price book" title="New" onclick="{!c.openNewPricebook}" />
+                <lightning:button class="showPricebookButton" variant="brand" label="Show Price book" title="Show" onclick="{!c.openPricebookTable}" />
+            </div>
+        </div>
+
+        <lightning:card title="Data Table">
+            <div class="productTable">
+                <lightning:datatable class="productRow" data="{! v.mydata }" columns="{! v.mycolumns }" keyField="Id" hideCheckboxColumn="false" onrowselection="{! c.updateSelectedText }" />
+            </div>
+        </lightning:card>
+
+        <aura:if isTrue="{!v.newPricebook}">
+            <c:AvenirHousePricebookDiscount parent='{!this}' listClickedProduct='{!v.selectedObjectToDiscount}' />
+        </aura:if>
+        <aura:if isTrue="{!v.showPricebook}">
+            <c:AvenirHousePricebookShow parent='{!this}' />
+        </aura:if>
+    </lightning:card>
+
+</aura:component>

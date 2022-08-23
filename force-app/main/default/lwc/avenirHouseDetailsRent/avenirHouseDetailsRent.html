@@ -1,0 +1,49 @@
+<template>
+    <h1>Date section</h1>
+    <div class="rentWrapper">
+        <div class="dateSection">
+            <lightning-input class="startDate" type="date" name="Start Date" label="Start date" onchange={getStartDate} value={startDate}></lightning-input>
+            <lightning-input class="endDate" type="date" name="input1" label="End date" onchange={getEndDate} value={endDate}></lightning-input>
+        </div>
+<h1>Guests</h1>
+
+<div class="memberSelect">
+    <lightning-button-icon icon-name="utility:chevronleft" alternative-text="Decrese" title="Decrese" onclick={decrement}></lightning-button-icon>
+    <span class="counter">{counter}</span>
+    <lightning-button-icon icon-name="utility:chevronright" alternative-text="Increse" title="Increse" onclick={increse}></lightning-button-icon>
+</div>
+
+<div class="slds-p-around_medium lgc-bg extraWrapper">
+    <p>Choice extra option to this flat:</p>
+    <lightning-button-menu alternative-text="Show menu" class="dropdownIcon" onclick={handleMenuSelect}>
+        <template for:each={extraOptions} for:item="extra">
+            <lightning-input class="extOption" value={extra.UnitPrice} style="width: 200px; margin: 5px;" key={extra.id} type="checkbox" label={extra.Name} name={extra.Id} onclick={totalPrice}></lightning-input>               
+        </template>
+</lightning-button-menu>
+</div>
+
+<div class="mathWrapper">
+    <div class="price">
+        <p>{day} Days of rent x {price} €</p>
+        <p>{costRent} €</p>
+    </div>
+    <div class="extraOpionsList" if:true={extraOpionsList}>
+        <template for:each={extraOpionsList} for:item="extraOpionsList">
+            <div key={extraOpionsList.id} class="price">
+        <p key={extraOpionsList.id}>{day} Days of {extraOpionsList.name} x {extraOpionsList.unitPrice} €</p>
+        <div key={extraOpionsList.id} class="extraPrice"  >{extraOpionsList.price} €</div>
+    </div>
+    </template>
+    </div>
+    <div class="price totalBorder">
+        <p class="fontWeight">Total price:</p>
+        <p class="fontWeight">{totalPriceList} €</p>
+    </div>
+</div>
+
+<button class="draw meet" onclick={checkAvailable}>Check availability</button>
+<button class="draw meet" onclick={addToCart}>Add to cart</button>
+<button class="draw meet" onclick={goToPayment}>Rent this house</button>
+</div>
+
+</template>

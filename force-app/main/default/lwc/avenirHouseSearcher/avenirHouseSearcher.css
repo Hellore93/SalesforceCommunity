@@ -1,0 +1,57 @@
+.lgc-bg {
+    background-color: rgb(242, 242, 242);
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22, 50, 92);
+}
+
+.searchInput {
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.searchHeadder {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.searchWrapper {
+    display: flex;
+}
+
+.settings lightning-input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.settings {
+    display: block;
+    position: absolute;
+    height: 160px;
+    width: 100vw;
+    z-index: 10000;
+    background-color: #ffffff;
+    /* box-shadow: 0px 10px 30px #e8e9ec;
+    border-radius: 25px 25px 25px 25px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    margin: auto;
+}
+
+.none {
+    display: none;
+}
+
+.closed {
+    width: 200vw;
+    height: 100vh;
+    position: absolute;
+    left: -100vw;
+}

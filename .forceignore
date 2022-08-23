@@ -1,0 +1,20 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+# .forceignore v2
+
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+**/Marketing_Cloud.namedCredential-meta.xml
+**/Marketing_Cloud.authProvider-meta.xml
+**/namedCredentials/Marketing_Cloud.namedCredential-meta.xml
+**/authproviders/Marketing_Cloud.authProvider-meta.xml
+**/namedCredentials/**
+**/authProviders/**
+**/flows/**
+
+# LWC Jest
+**/__tests__/**

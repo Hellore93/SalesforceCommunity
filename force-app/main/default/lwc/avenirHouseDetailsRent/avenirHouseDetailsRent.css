@@ -1,0 +1,179 @@
+.memberSelect {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.extraWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.extraWrapper p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.dropdownIcon {
+    position: relative;
+    bottom: 7px;
+}
+
+.mathWrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.extraOpionsList {
+    display: flex;
+    flex-direction: column;
+}
+
+.memberSelect lightning-input {
+    text-align: center;
+}
+
+lightning-button-menu {
+    margin: 0px 10px;
+}
+
+.text {
+    width: 60px;
+}
+
+.counter {
+    margin: auto 10px;
+}
+
+.fontWeight {
+    font-weight: 700;
+}
+
+.totalBorder {
+    border-top: rgb(77 77 77 / 33%) 1px solid;
+}
+
+.dateSection {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.dateSection lightning-input {
+    width: 40%;
+    margin: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 15px 0px;
+}
+
+.rentWrapper {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%;
+    justify-content: center; */
+}
+
+button {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em 2em;
+    box-shadow: inset 0 0 0 2px #f45e61;
+    color: #f45e61;
+    font-size: inherit;
+    font-weight: 700;
+    position: relative;
+    vertical-align: middle;
+}
+
+button::before,
+button::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.draw {
+    transition: color 0.25s;
+    width: 15vw;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.draw::before,
+.draw::after {
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.draw::before {
+    top: 0;
+    left: 0;
+}
+
+.draw::after {
+    bottom: 0;
+    right: 0;
+}
+
+.draw:hover {
+    color: #60daaa;
+}
+
+.draw:hover::before,
+.draw:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.draw:hover::before {
+    border-top-color: #60daaa;
+    border-right-color: #60daaa;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+.draw:hover::after {
+    border-bottom-color: #60daaa;
+    border-left-color: #60daaa;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+.meet:hover {
+    color: #fbca67;
+}
+
+.meet::after {
+    top: 0;
+    left: 0;
+}
+
+.meet:hover::before {
+    border-top-color: #fbca67;
+    border-right-color: #fbca67;
+}
+
+.meet:hover::after {
+    border-bottom-color: #fbca67;
+    border-left-color: #fbca67;
+    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+}

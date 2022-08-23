@@ -1,0 +1,104 @@
+.hederParagraph {
+        text-align: center;
+        font-size: xx-large;
+        font-weight: 900;
+    }
+    
+    .iterator {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+    
+    .singleHouse {
+        height: 400px;
+        width: 300px;
+        text-align: center;
+    }
+    
+    .photo {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .typeSearchSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .typeSearchSection img {
+        margin: 0 25px;
+        width: 50px;
+    }
+    
+    .typeSearchSection p {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .typeSearchSection div {
+        cursor: pointer;
+    }
+    
+    .active {
+        color: red;
+    }
+    
+    .inactive {
+        /* color: red; */
+    }
+    
+    .bodySection {
+        display: flex;
+    }
+    
+    .settings {
+        width: 15vw;
+        text-align: center;
+        background-color: gainsboro;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        border-radius: 0px 20px 20px 0px;
+    }
+    
+    .settings lightning-input {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .settingsSection {
+        margin-left: -25px;
+    }
+    
+    lightning-button-icon {
+        position: absolute;
+    }
+    
+    .searchButton {
+        margin-top: 10px;
+    }
+    
+    .filterHeader {
+        font-size: 15px;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    
+    .pagination {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .combo {
+        width: 10vw;
+        text-align: center;
+    }
+
+    .combo lightning-combobox{
+        text-align: center;
+    }

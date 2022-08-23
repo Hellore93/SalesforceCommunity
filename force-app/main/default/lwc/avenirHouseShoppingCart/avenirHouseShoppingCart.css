@@ -1,0 +1,106 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.footer {
+    display: flex;
+    margin-top: 10px;
+    justify-content: end;
+}
+
+.sumPrice {
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 4px 20px;
+    width: 250px;
+}
+
+.rentButton {
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 4px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.name {
+    width: 15vw;
+}
+
+.localization {
+    width: 7vw;
+}
+
+.rentDate {
+    width: 9vw;
+}
+
+.price {
+    width: 8vw;
+}
+
+.action {
+    width: 6vw;
+}
+
+.dateInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dateInput lightning-input {
+    margin: 15px;
+}
+
+.emptySection {
+    height: 82vh;
+    display: flex;
+}
+
+.emptyCart {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    margin: auto;
+}
+
+h1 {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 4px 20px;
+    float: left;
+    width: 250px;
+    margin-left: 15vw;
+}
+
+table div {
+    text-align: center;
+}
+
+.font {
+    font-size: 15px;
+    font-weight: 700;
+}

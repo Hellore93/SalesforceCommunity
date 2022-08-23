@@ -1,0 +1,47 @@
+<template>
+    <button class="slds-button slds-button_outline-brand" onclick={complain}> {buttonLabel} </button>
+
+    <div if:true={createComplain}>
+        
+<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+
+      <div class="slds-modal__header">
+        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Complain Case</h1>
+      </div>
+      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <div if:false={caseInfo}>
+<lightning-record-edit-form object-api-name="Case" onsubmit={handleSubmit} onsuccess={handleSuccess}>
+    <lightning-input-field field-name="Origin"> </lightning-input-field>
+    <lightning-input-field field-name="SuppliedEmail"> </lightning-input-field>
+    <lightning-input-field field-name="SuppliedPhone"> </lightning-input-field>
+    <lightning-input-field field-name="Subject"> </lightning-input-field>
+    <lightning-input-field field-name="Description"> </lightning-input-field>
+    <lightning-input-field field-name="Comments"> </lightning-input-field>
+    <lightning-button
+            class="slds-m-top_small slds-m-right_small"
+            type="submit"
+            label="Create new"
+        ></lightning-button>
+        <button class="slds-button slds-button_neutral slds-m-left" aria-label="Cancel and close" onclick={close}>Cancel</button>
+</lightning-record-edit-form>
+</div>
+
+<div if:true={caseInfo}>
+  <div class="complain">
+  <div><b>Created: </b> {createdData}</div>
+  <div><b>Subject: </b> {complainItem.Subject}</div>
+  <div><b>Description: </b> {complainItem.Description}</div>
+  <div><b>Email: </b> {complainItem.SuppliedEmail}</div>
+  <div class="status"><b>Status: </b> {complainItem.Status}</div>
+  <button class="slds-button slds-button_neutral slds-m-left" aria-label="Cancel and close" onclick={close}>Cancel</button>
+</div>
+</div>
+
+    </div>
+    </div>
+  </section>
+  <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+    </div>
+</template>

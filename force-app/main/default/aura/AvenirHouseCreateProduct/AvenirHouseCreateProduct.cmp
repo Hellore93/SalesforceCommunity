@@ -1,0 +1,83 @@
+<aura:component description="AvenirHouseCreateProduct" controller="AvenirHouseCreateProduct" implements="flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId">
+    <aura:attribute name="parent" type="Aura.Component" />
+    <aura:attribute name="productDetails" type="Boolean" default="true" />
+    <aura:attribute name="productPhoto" type="Boolean" default="false" />
+    <aura:attribute name="productPrice" type="Boolean" default="false" />
+    <aura:attribute name="fields" type="String[]" default="['Name','ProductCode','Description','Family','IsActive']" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="recordName" type="String" />
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg', '.webp']" />
+    <aura:attribute name="galleryPhoto" type="boolean" default="false" />
+    <aura:attribute name="photoList" type="List" default="[]" />
+    <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/" />
+
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">New house</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless" id="modal-content-id-1">
+
+                <aura:if isTrue="{!v.productDetails}">
+                    <!-- <lightning:recordForm aura:id="RecordForm" objectApiName="Product2" fields="{!v.fields}" onsuccess="{!c.handleSuccess}" /> -->
+                    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Product2" onsuccess="{!c.handleSuccess}">
+                        <lightning:inputField fieldName="Name" />
+                        <lightning:inputField fieldName="ProductCode" />
+                        <lightning:inputField fieldName="Description" />
+                        <lightning:inputField fieldName="Family" />
+                        <lightning:inputField fieldName="IsActive" />
+                        <lightning:inputField fieldName="Extra_option__c" />
+                        <lightning:inputField fieldName="Country__c" />
+                        <lightning:inputField fieldName="City__c" />
+                        <lightning:inputField fieldName="Street__c" />
+                        <div class="buttonSection">
+                            <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick="{!c.closeModal}">Close</button>
+                            <lightning:button variant="brand" class="slds-m-top_small nextNewButton" type="submit" label="Next" />
+                        </div>
+                    </lightning:recordEditForm>
+
+                </aura:if>
+
+                <aura:if isTrue="{!v.productPhoto}">
+                    <aura:if isTrue="{!v.photoList}">
+                        <div class="iterator">
+                            <aura:iteration indexVar="i" items="{!v.photoList}" var="content">
+                                <div class="photoItem">
+                                    <img src="{!v.prefixURL + content.Id}" width="200" height="200" />
+                                    <p class="photoTitle">{!content.Title}</p>
+                                    <button data-param="{!content.Id}" data-productid="{!content.FirstPublishLocationId}" class="btn" onclick="{!c.setToDisplayUrl}"><i class="fa fa-home"></i></button>
+                                    <button data-value="{!content.ContentDocumentId}" data-index="{!i}" class="btn" iconName="action:delete" onclick="{! c.handleLikeButtonClick }" alternativeText="Delete"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </aura:if>
+
+                    <lightning:fileUpload label="Attach receipt" name="fileUploader" multiple="true" accept="{!v.filetype}" recordId="{!v.recordId}" onuploadfinished="{!c.handleUploadFinished}" />
+                </aura:if>
+
+                <aura:if isTrue="{!v.productPrice}">
+                    <h3 class="headlineProduct">Add Product Price</h3>
+                    <p>Product Name: <b>{!v.recordName}</b></p>
+                    <lightning:input aura:id="enter-product-price" type="number" name="input7" label="Price of product: " formatter="currency" step="0.01" />
+                </aura:if>
+
+                <!-- </div>
+            <div class="slds-modal__footer"> -->
+                <div class="buttonSection">
+                    <aura:if isTrue="{!v.productPhoto || v.productPrice}">
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick="{!c.closeModal}">Close</button>
+                    </aura:if>
+                    <aura:if isTrue="{!v.productPhoto}">
+                        <lightning:button variant="brand" label="Next" title="Price section" onclick="{! c.goToPriceSection }" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.productPrice}">
+                        <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.savePrice }" />
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+
+</aura:component>

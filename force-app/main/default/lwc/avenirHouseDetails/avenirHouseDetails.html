@@ -1,0 +1,43 @@
+<template><div if:true={clickedObjectDeails}>
+        <div class="detailSection">
+            <h1 class="houseHeader">{houseObject.product.Name}</h1>
+            <c-avenir-house-details-commentary-star show-half-stars="true" read-only-star="true" rating={rating}></c-avenir-house-details-commentary-star>
+            <h2 class="sectionName">House details</h2>
+            <div class="houseDetailWrapper">
+                <div class="houseInformation">
+                    <div><b>House type: </b> {houseObject.product.Family}</div>
+                    <div><b>Country: </b>{houseObject.product.Country__c}</div>
+                    <div><b>City: </b>{houseObject.product.City__c}</div>
+                    <div><b>Street: </b>{houseObject.product.Street__c}</div>
+                    <div><b>Description: </b>{houseObject.product.Description}</div>
+                    <div class={withDiscount}><b>Price: </b>{houseObject.productStandardPrice.UnitPrice} €</div>
+                    <div if:true={discountPrice}><b>Actual Price: </b>{discountPrice} €</div>
+                    <!-- <div><b>Rating: </b>{rating}/5</div> -->
+                    </div>        
+                <img class="housePhoto" src={imgUrl}/>                
+            </div>
+        </div>
+        <div class="photoGallery" if:true={photoGallery}>
+            <h2 class="sectionName">Photo gallery</h2>
+            <div class="iterator">
+            <template for:each={photoGallery} for:item="photo">
+                <c-avenir-house-details-photo-gallery key={photo.id} photo-item={photo} photo-list={objectToSend}></c-avenir-house-details-photo-gallery>
+            </template>
+</div>
+</div>
+<h2 class="sectionName">Rent me</h2>
+<div class="rentSection">
+    <c-avenir-house-details-rent clicked-object={houseObject}></c-avenir-house-details-rent>
+    <div class="locatlizationSection">
+        <h1>House localization</h1>
+        <lightning-map class="houseMap" map-markers={mapMarkers} zoom-level={zoomLevel}> </lightning-map>
+    </div>
+</div>
+
+<div class="commentrySection">
+    <h2 class="sectionName">Commentary</h2>
+    <c-avenir-house-details-commentary clicked-object={houseObject}></c-avenir-house-details-commentary>
+</div>
+
+</div>
+</template>
