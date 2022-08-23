@@ -1,0 +1,45 @@
+<template>
+
+    <div class="container page-wrapper" >
+        <div class="page-inner">
+          <div class="row">
+            <div class="el-wrapper">
+              <div class="box-up">
+                <img class="img" src={imgUrl} alt="">
+                <div class="img-info">
+                  <div class="info-inner">
+                      <div class="a-size">
+                    <span class="p-name">{result.Name}</span>
+                    <span class="p-company">Type: {result.Family}</span>
+                    <span class="p-company">Localization: {result.Country__c}</span>
+                </div>
+                  </div>
+                  <div class="priceWrapper">
+                 <div class="a-size">
+                    <div class="priceSection">
+                        <div class={priceClass}><b>Price: </b>{price.productStandardPrice.UnitPrice} €</div>
+                        <div if:true={discountPrice} class="priceText"><b>Actual price: </b>{discountPrice} €</div>
+                    </div> 
+                  </div>
+                </div>
+                </div>
+              </div>
+      
+              <div class="box-down">
+                <div class="h-bg">
+                  <div class="h-bg-inner"></div>
+                </div>
+      
+                <a class="cart" href="#" onclick={showDetails}>
+                    <span class="price">{result.Country__c}, {result.City__c}</span>
+                  <span class="add-to-cart">
+                    <span class="txt">Go to details</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <div class="wrapper">
+        <template for:each={orderItems} for:item="item">
+            <div class="singleItem" key={item.id}>
+            <c-avenir-house-order-history-single-item-modal-photo class="item" key={item.id} order-item={item}></c-avenir-house-order-history-single-item-modal-photo>
+            <div class="descriptSection">
+            <div key={item.id} class="item"><b>Name:</b> {item.Product2.Name}</div>
+            <div key={item.id} class="item"><b>Country:</b> {item.Product2.Country__c}</div>
+            <div key={item.id} class="item"><b>Start Rent:</b> {item.ServiceDate}</div>
+            <div key={item.id} class="item"><b>End Rent:</b> {item.EndDate}</div>
+            <div key={item.id} class="item"><b>Price:</b> {item.TotalPrice}€</div>
+            <c-avenir-house-order-history-complain key={item.id} order-items={item} item-case={itemCase} single-order={singleOrder}></c-avenir-house-order-history-complain>
+        </div>
+        </div>
+        </template>
+</div>
+</template>

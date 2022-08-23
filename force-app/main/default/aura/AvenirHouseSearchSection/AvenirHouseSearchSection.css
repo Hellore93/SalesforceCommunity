@@ -1,0 +1,77 @@
+.THIS {}
+
+.THIS .searchSection {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.THIS .buttonSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.THIS .photoItem {
+    margin: 0 10px;
+}
+
+.THIS .iterator {
+    display: flex;
+    text-align: center;
+}
+
+.THIS .headlineProduct {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.THIS .productRow {
+    text-align: center;
+}
+
+.THIS .productTable {
+    width: 95vw;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.THIS .photoTitle {
+    word-break: break-all;
+}
+
+.THIS .photoItem {
+    /* display: flex;
+    flex-direction: column; */
+    width: 200px;
+}
+
+.THIS .deleteIcon {
+    margin-top: 10px;
+}
+
+.THIS .galleryMessage {
+    text-align: center;
+}
+
+.THIS .iterator {
+    display: -webkit-box;
+    overflow: auto;
+}
+
+.THIS .btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 0 5px;
+}
+
+.THIS .btn:hover {
+    background-color: RoyalBlue;
+}

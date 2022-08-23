@@ -1,0 +1,44 @@
+.wrapper {
+    margin: auto;
+    width: 90%;
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.singleItem {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 450px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.descriptSection {
+    margin: 0 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    /* word-break: break-word; */
+    width: 200px;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+
+c-avenir-house-order-history-single-item-modal-photo {
+    margin-bottom: 10px;
+}
+
+c-avenir-house-order-history-complain {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}

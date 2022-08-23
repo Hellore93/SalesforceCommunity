@@ -1,0 +1,13 @@
+<template>
+    <div class="horizontal-list">
+        <p>Order Number: {singleOrder.OrderNumber}</p>
+        <p>Created time: {createTime}</p>
+        <p>Rent time: {singleOrder.EffectiveDate}</p>
+        <p>Total cost: {singleOrder.TotalAmount} €</p>
+        <div class="button">
+            <button class="slds-button slds-button_brand" onclick={showMore}>{label}</button>
+    </div>
+    </div>
+        <c-avenir-house-order-history-single-item-modal if:true={showModal} order-items={orderItems} single-order={singleOrder} item-case={itemCase}></c-avenir-house-order-history-single-item-modal>
+    
+</template>

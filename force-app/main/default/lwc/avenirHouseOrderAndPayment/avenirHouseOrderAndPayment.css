@@ -1,0 +1,114 @@
+.name {
+    width: 15vw;
+}
+
+.classWrapper {}
+
+table {
+    width: 70%;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+table div {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.paymentSection {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.subtotal {
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.payment {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px gray;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.payment img {
+    margin: auto;
+}
+
+.payDate {
+    display: flex;
+    flex-direction: column;
+}
+
+.payDate>* {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.visaIcon {
+    width: 5vw;
+    margin-left: 10px;
+}
+
+.userName {
+    margin: auto 10px;
+}
+
+.payCheckbox {
+    margin: auto 2vw;
+}
+
+.expmonth {
+    margin-bottom: 10px;
+}
+
+.cvvClass {
+    margin: 10px auto;
+}
+
+.termCondi {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.termWrapper {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.termWrapper p {
+    text-align: center;
+}
+
+lightning-button {
+    margin: auto;
+    width: 15vw;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.personalTabel {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+}

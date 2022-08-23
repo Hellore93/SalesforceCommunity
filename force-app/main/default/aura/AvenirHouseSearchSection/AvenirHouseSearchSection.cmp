@@ -1,0 +1,91 @@
+<aura:component description="AvenirHouseSearchSection" controller="AvenirHouseSearchSection" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:attribute name="mycolumns" type="List" />
+    <aura:attribute name="mydata" type="Object" />
+    <aura:attribute name="houseName" type="String" />
+    <aura:attribute name="selectedRows" type="List" />
+    <aura:attribute name="variant1" type="boolean" default="false" />
+    <aura:attribute name="productId" type="String" />
+    <aura:attribute name="photoList" type="List" default="[]" />
+    <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/" />
+    <aura:attribute name="galleryText" type="boolean" default="true" />
+    <aura:attribute name="galleryPhoto" type="boolean" default="false" />
+    <aura:attribute name="productPrice" type="boolean" default="false" />
+    <aura:attribute name="informationModal" type="boolean" default="false" />
+    <aura:attribute name="priceObject" type="List" default="['priceId', 'isActive', 'UnitPrice']" />
+    <aura:attribute name="priceObjectName" type="String" />
+    <aura:attribute name="createNewProduct" type="boolean" default="false" />
+
+    <!-- <aura:handler event="force:showToast" action="{!c.refreshAll}" /> -->
+    <aura:method name="closeModalEvent" action="{!c.closeNewProduct}" access="public">
+        <aura:attribute name="closeModalAttribute" type="Boolean" />
+    </aura:method>
+
+    <lightning:card title="Search Section">
+        <div class="searchSection">
+            <div class="searchNameSection" onkeyup="{! c.startSearch }">
+                <lightning:input aura:id="enter-house-name" name="enter-search" label="Write house name and press enter" type="search" />
+            </div>
+            <div class="buttonSection">
+                <lightning:button class="newAccountButton" variant="brand" label="New" title="New" onclick="{!c.newHouse}" />
+                <lightning:button class="newAccountButton" variant="brand" label="Clear" title="Clear" onclick="{!c.clear}" />
+            </div>
+        </div>
+
+        <aura:if isTrue="{!v.createNewProduct}">
+            <c:AvenirHouseCreateProduct parent='{!this}' />
+        </aura:if>
+
+        <lightning:card title="Data Table">
+            <div class="productTable">
+                <lightning:datatable class="productRow" data="{! v.mydata }" columns="{! v.mycolumns }" keyField="Id" hideCheckboxColumn="true" onrowaction="{!c.handleRowAction}" />
+            </div>
+        </lightning:card>
+
+        <aura:if isTrue="{!v.variant1}">
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless" id="modal-content-id-1">
+
+                        <aura:if isTrue="{!v.informationModal}">
+                            <h3 class="headlineProduct">Product Information</h3>
+                            <force:recordView recordId="{!v.productId}" />
+                            <h3 class="headlineProduct">Gallery</h3>
+                            <aura:if isTrue="{!v.galleryText}">
+                                <p class="galleryMessage">No foto added!</p>
+                            </aura:if>
+
+                            <aura:if isTrue="{!v.galleryPhoto}">
+                                <div class="iterator">
+                                    <aura:iteration indexVar="i" items="{!v.photoList}" var="content">
+                                        <div class="photoItem">
+                                            <img src="{!v.prefixURL + content.Id}" width="200" height="200" />
+                                            <p class="photoTitle">{!content.Title}</p>
+                                            <button data-param="{!content.Id}" data-productid="{!content.FirstPublishLocationId}" class="btn" onclick="{!c.setToDisplayUrl}"><i class="fa fa-home"></i></button>
+                                            <button data-value="{!content.ContentDocumentId}" data-index="{!i}" class="btn" iconName="action:delete" onclick="{! c.handleLikeButtonClick }" alternativeText="Delete"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </aura:iteration>
+                                </div>
+                            </aura:if>
+                        </aura:if>
+
+                        <aura:if isTrue="{!v.productPrice}">
+                            <h3 class="headlineProduct">Add Product Price</h3>
+                            <p>Product Name: <b>{!v.priceObjectName}</b></p>
+                            <lightning:input aura:id="enter-product-price" type="number" name="input7" label="Price of product: " value="{!v.priceObject.UnitPrice}" formatter="currency" step="0.01" />
+                        </aura:if>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <aura:if isTrue="{!v.productPrice}">
+                            <lightning:button variant="brand" label="Save" title="Brand action" onclick="{! c.savePriceBook }" />
+                        </aura:if>
+                        <lightning:button class="slds-button slds-button_neutral" onclick="{!c.closeModal}">Close</lightning:button>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </aura:if>
+
+    </lightning:card>
+</aura:component>

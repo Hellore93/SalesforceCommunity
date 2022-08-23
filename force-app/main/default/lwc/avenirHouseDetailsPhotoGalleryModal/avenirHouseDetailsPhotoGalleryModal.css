@@ -1,0 +1,26 @@
+.housePhoto {
+    width: 75vw;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+.galleryContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navigationSection {
+    justify-content: center;
+    display: flex;
+    position: relative;
+    bottom: 275px;
+}
+
+.navButton {
+    margin: 0 38vw;
+}
+
+.modalWrapper {
+    height: 100vh;
+}

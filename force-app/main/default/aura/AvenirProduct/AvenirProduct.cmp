@@ -1,0 +1,4 @@
+<aura:component>
+    <div> Test </div>
+
+</aura:component>

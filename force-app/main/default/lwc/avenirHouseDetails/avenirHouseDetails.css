@@ -1,0 +1,77 @@
+/* text {
+    font-size: 18px;
+} */
+
+.houseHeader {
+    text-align: center;
+    font-size: medium;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.houseDetailWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.houseInformation {
+    width: 70%;
+}
+
+.houseInformation div {
+    font-size: 15px;
+}
+
+.housePhoto {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.sectionName {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 15px 0px;
+}
+
+.iterator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.addToCart {
+    left: 28.5vw;
+    position: relative;
+    cursor: pointer;
+}
+
+b {
+    font-size: 18px;
+}
+
+.houseMap {
+    width: 45vw;
+    height: 30vw;
+}
+
+.rentSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.withDiscount {
+    margin: 0;
+    text-decoration: line-through rgb(255, 0, 0) 3px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 15px 0px;
+}

@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:handler name="change" value="{!v.selectedRows}" action="{!c.setVisible}" />
+
+    <force:recordEdit aura:id="edit" recordId="01t7Q0000010baEQAQ" />
+    <lightning:button label="Save" onclick="{!c.save}" />
+
+</aura:component>

@@ -1,0 +1,89 @@
+<!-- <template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+      <td class="name">
+        <div>{singleProduct.Name}</div>
+      </td>
+      <td class="localization">
+        <div>{singleProduct.Country__c}</div>
+      </td>
+      <td class="localization"> 
+        <div>{singleProduct.City__c}</div>
+      </td>
+      <td class="rentDate">
+        <lightning-input value={startDate} variant="label-hidden" class="startDate" type="date" name="Start Date" label="Start date" onchange={getStartDate}></lightning-input>
+      </td>
+      <td class="rentDate"> 
+        <lightning-input value={endDate} variant="label-hidden" class="endDate" type="date" name="input1" label="End date" onchange={getEndDate}></lightning-input>
+      </td>
+      <td class="price">
+        <div>{price} €</div>
+      </td>
+      <td class="price">
+        <div class="priceToSum">{costRent}€</div>
+      </td>
+      <td class="price font extraOption">
+        <lightning-button-menu alternative-text="Show menu" class="dropdownIcon" onclick={handleMenuSelect}>
+          <template for:each={extraOptions} for:item="extra">
+              <lightning-input class="extOption" value={extra.UnitPrice} style="width: 200px; margin: 5px;" key={extra.id} type="checkbox" label={extra.Name} name={extra.Id} ></lightning-input>               
+          </template>
+</lightning-button-menu>
+</td>
+<td class="price font">
+    <div>{extraOpionsPrice} €</div>
+</td>
+<td class="price font">
+    <div>{totalPrice} €</div>
+</td>
+<td class="action font">
+    <lightning-button-icon icon-name="action:delete" alternative-text="Delete" title="Delete" onclick={deleteFromCache}></lightning-button-icon>
+    <lightning-button-icon class={checkClass} icon-name="utility:task" alternative-text="Check Available" title="Check Available" onclick={checkAvailable}></lightning-button-icon>
+</td>
+</table>
+
+</template> -->
+
+<template>
+
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+    <td class="name">
+      <div>{singleProduct.Name}</div>
+    </td>
+    <td class="localization">
+      <div>{singleProduct.Country__c}</div>
+    </td>
+    <td class="localization"> 
+      <div>{singleProduct.City__c}</div>
+    </td>
+    <td class="rentDate">
+      <lightning-input value={startDate} variant="label-hidden" class="startDate" type="date" name="Start Date" label="Start date" onchange={getStartDate}></lightning-input>
+    </td>
+    <td class="rentDate"> 
+      <lightning-input value={endDate} variant="label-hidden" class="endDate" type="date" name="input1" label="End date" onchange={getEndDate}></lightning-input>
+    </td>
+    <td class="price">
+      <div>{price} €</div>
+    </td>
+    <td class="price">
+      <div class="priceToSum">{costRent}€</div>
+    </td>
+    <td class="price font extraOption">
+      <lightning-button-menu alternative-text="Show menu" class="dropdownIcon" onclick={handleMenuSelect}>
+        <template for:each={extraOptions} for:item="extra">
+            <lightning-input class="extOption" value={extra.UnitPrice} style="width: 200px; margin: 5px;" key={extra.id} type="checkbox" label={extra.Name} name={extra.Id} checked={extra.check}></lightning-input>               
+        </template>
+</lightning-button-menu>
+</td>
+<td class="price font">
+    <div>{extraOpionsPrice} €</div>
+</td>
+<td class="price font">
+    <div>{totalPrice} €</div>
+</td>
+<td class="action font">
+    <lightning-button-icon icon-name="action:delete" alternative-text="Delete" title="Delete" onclick={deleteFromCache}></lightning-button-icon>
+    <lightning-button-icon class={checkClass} icon-name="utility:task" alternative-text="Check Available" title="Check Available" onclick={checkAvailable}></lightning-button-icon>
+</td>
+</table>
+
+</template>

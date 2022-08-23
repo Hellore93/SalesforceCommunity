@@ -1,0 +1,75 @@
+table div {
+    text-align: center;
+}
+
+table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.name {
+    width: 15vw;
+}
+
+.localization {
+    width: 7vw;
+}
+
+.rentDate {
+    width: 9vw;
+}
+
+.price {
+    width: 8vw;
+}
+
+.action {
+    width: 6vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.action lightning-button-icon {
+    margin: 0 5px;
+    cursor: pointer;
+    height: 100%;
+    height: 73px;
+}
+
+.action lightning-button-icon {
+    height: 100%;
+}
+
+.rentDate lightning-input {
+    width: 80%;
+}
+
+.startDate {
+    margin: auto;
+}
+
+.endDate {
+    margin: auto;
+}
+
+.extraOption {
+    justify-content: center;
+    display: flex;
+}
+
+.default {
+    background-color: rgb(242, 242, 242);
+    color: black;
+}
+
+.error {
+    background-color: rgb(250 48 48 / 70%);
+    border-radius: 5px;
+}
+
+.succ {
+    background-color: rgba(46, 179, 6, 0.7);
+    border-radius: 5px;
+}
