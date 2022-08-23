@@ -1,0 +1,81 @@
+<!--
+ - Created by 48781 on 04.05.2022.
+ -->
+
+<apex:page id="ImportTemplate" controller="ImportTemplateController" readOnly="true"
+           contentType="application/vnd.ms-excel#ConsignmentSearchData.csv">
+    Doctor Name, Doctor /n
+
+<!--    <apex:repeat value="{!doctorsTemplate}" var="d">-->
+<!--        {!d.Doctor_Name__c}, {!d.Name}-->
+<!--    </apex:repeat>-->
+
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!doctorsTemplate}" var="d">
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Doctor Name"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Doctor_Name__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Doctor Last Name"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Name}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Phone Number"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Phone_number__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Email"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Email__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Speciality"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Speciality__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Date of Birth"
+                    </apex:facet>
+                    <apex:outputField value="{!d.DateBorn__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "City"
+                    </apex:facet>
+                    <apex:outputField value="{!d.City__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Street"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Street__c}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        "Country"
+                    </apex:facet>
+                    <apex:outputField value="{!d.Country__c}"/>
+                </apex:column>
+
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+</apex:page>

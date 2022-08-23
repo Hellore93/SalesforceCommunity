@@ -1,0 +1,28 @@
+<template>
+  <lightning-button label="Create New Record" onclick={createNewRecord}></lightning-button>  
+          
+
+    <template if:true={createNewRecordModal}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">         
+          <div class="slds-modal__header">
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Create New Record</h1>
+            <p>Choice option:</p>
+            <lightning-input id="doctorSearchCheckbox" type="checkbox" label="Create Film" onchange={searchFilmHandle} disabled={filmDisable}></lightning-input>
+            <lightning-input type="checkbox" label="Create Actor" onchange={searchActorHandle} disabled={actorDisable}></lightning-input>
+          </div>
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+            <c-create-new-film if:true={searchFilmCheckbox}></c-create-new-film>
+            <c-create-new-actor if:true={searchActorCheckbox}></c-create-new-actor>
+           
+        </div>
+          <div class="slds-modal__footer slds-modal__footer_directional">
+            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+            <button class="slds-button slds-button_brand">Save</button>
+          </div>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>

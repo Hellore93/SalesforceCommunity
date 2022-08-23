@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__StepFunctionsGroup3__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Reference to Step Function Group. The trigger is executing Groups one by one to provide correct separation between functions execution. Each group is working in its own separated execution context (DataStore, Modification Context). Splitting functionalities execution in the multiple groups is highly sub-optimal - please try to run logic using only one group.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Reference to Step Function Group. The trigger is executing Groups one by one to provide correct separation between functions execution. Each group is working in its own separated execution context (DataStore, Modification Context). Splitting functionalities execution in the multiple groups is highly sub-optimal - please try to run logic using only one group.</inlineHelpText>
+    <label>Step Functions Group #3</label>
+    <referenceTo>fboost__B_StepFunctionsGroupConfig__mdt</referenceTo>
+    <relationshipLabel>Boost Trigger Config #3</relationshipLabel>
+    <relationshipName>TriggerConfig3</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__ExecutionInterval__c</fullName>
+    <defaultValue>&quot;30min&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Determines process execution interval.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Determines process execution interval.</inlineHelpText>
+    <label>Execution Interval</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1min</fullName>
+                <default>false</default>
+                <label>1min</label>
+            </value>
+            <value>
+                <fullName>2min</fullName>
+                <default>false</default>
+                <label>2min</label>
+            </value>
+            <value>
+                <fullName>3min</fullName>
+                <default>false</default>
+                <label>3min</label>
+            </value>
+            <value>
+                <fullName>4min</fullName>
+                <default>false</default>
+                <label>4min</label>
+            </value>
+            <value>
+                <fullName>5min</fullName>
+                <default>false</default>
+                <label>5min</label>
+            </value>
+            <value>
+                <fullName>6min</fullName>
+                <default>false</default>
+                <label>6min</label>
+            </value>
+            <value>
+                <fullName>7min</fullName>
+                <default>false</default>
+                <label>7min</label>
+            </value>
+            <value>
+                <fullName>8min</fullName>
+                <default>false</default>
+                <label>8min</label>
+            </value>
+            <value>
+                <fullName>9min</fullName>
+                <default>false</default>
+                <label>9min</label>
+            </value>
+            <value>
+                <fullName>10min</fullName>
+                <default>false</default>
+                <label>10min</label>
+            </value>
+            <value>
+                <fullName>15min</fullName>
+                <default>false</default>
+                <label>15min</label>
+            </value>
+            <value>
+                <fullName>20min</fullName>
+                <default>false</default>
+                <label>20min</label>
+            </value>
+            <value>
+                <fullName>30min</fullName>
+                <default>true</default>
+                <label>30min</label>
+            </value>
+            <value>
+                <fullName>45min</fullName>
+                <default>false</default>
+                <label>45min</label>
+            </value>
+            <value>
+                <fullName>60min</fullName>
+                <default>false</default>
+                <label>60min</label>
+            </value>
+            <value>
+                <fullName>2hour</fullName>
+                <default>false</default>
+                <label>2hour</label>
+            </value>
+            <value>
+                <fullName>3hour</fullName>
+                <default>false</default>
+                <label>3hour</label>
+            </value>
+            <value>
+                <fullName>4hour</fullName>
+                <default>false</default>
+                <label>4hour</label>
+            </value>
+            <value>
+                <fullName>6hour</fullName>
+                <default>false</default>
+                <label>6hour</label>
+            </value>
+            <value>
+                <fullName>8hour</fullName>
+                <default>false</default>
+                <label>8hour</label>
+            </value>
+            <value>
+                <fullName>12hour</fullName>
+                <default>false</default>
+                <label>12hour</label>
+            </value>
+            <value>
+                <fullName>01:00</fullName>
+                <default>false</default>
+                <label>01:00</label>
+            </value>
+            <value>
+                <fullName>02:00</fullName>
+                <default>false</default>
+                <label>02:00</label>
+            </value>
+            <value>
+                <fullName>03:00</fullName>
+                <default>false</default>
+                <label>03:00</label>
+            </value>
+            <value>
+                <fullName>04:00</fullName>
+                <default>false</default>
+                <label>04:00</label>
+            </value>
+            <value>
+                <fullName>05:00</fullName>
+                <default>false</default>
+                <label>05:00</label>
+            </value>
+            <value>
+                <fullName>06:00</fullName>
+                <default>false</default>
+                <label>06:00</label>
+            </value>
+            <value>
+                <fullName>07:00</fullName>
+                <default>false</default>
+                <label>07:00</label>
+            </value>
+            <value>
+                <fullName>08:00</fullName>
+                <default>false</default>
+                <label>08:00</label>
+            </value>
+            <value>
+                <fullName>09:00</fullName>
+                <default>false</default>
+                <label>09:00</label>
+            </value>
+            <value>
+                <fullName>10:00</fullName>
+                <default>false</default>
+                <label>10:00</label>
+            </value>
+            <value>
+                <fullName>11:00</fullName>
+                <default>false</default>
+                <label>11:00</label>
+            </value>
+            <value>
+                <fullName>12:00</fullName>
+                <default>false</default>
+                <label>12:00</label>
+            </value>
+            <value>
+                <fullName>13:00</fullName>
+                <default>false</default>
+                <label>13:00</label>
+            </value>
+            <value>
+                <fullName>14:00</fullName>
+                <default>false</default>
+                <label>14:00</label>
+            </value>
+            <value>
+                <fullName>15:00</fullName>
+                <default>false</default>
+                <label>15:00</label>
+            </value>
+            <value>
+                <fullName>16:00</fullName>
+                <default>false</default>
+                <label>16:00</label>
+            </value>
+            <value>
+                <fullName>17:00</fullName>
+                <default>false</default>
+                <label>17:00</label>
+            </value>
+            <value>
+                <fullName>18:00</fullName>
+                <default>false</default>
+                <label>18:00</label>
+            </value>
+            <value>
+                <fullName>19:00</fullName>
+                <default>false</default>
+                <label>19:00</label>
+            </value>
+            <value>
+                <fullName>20:00</fullName>
+                <default>false</default>
+                <label>20:00</label>
+            </value>
+            <value>
+                <fullName>21:00</fullName>
+                <default>false</default>
+                <label>21:00</label>
+            </value>
+            <value>
+                <fullName>22:00</fullName>
+                <default>false</default>
+                <label>22:00</label>
+            </value>
+            <value>
+                <fullName>23:00</fullName>
+                <default>false</default>
+                <label>23:00</label>
+            </value>
+            <value>
+                <fullName>24:00</fullName>
+                <default>false</default>
+                <label>24:00</label>
+            </value>
+            <value>
+                <fullName>Sat_00</fullName>
+                <default>false</default>
+                <label>Saturday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Sat_01</fullName>
+                <default>false</default>
+                <label>Saturday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Sat_02</fullName>
+                <default>false</default>
+                <label>Saturday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Sat_03</fullName>
+                <default>false</default>
+                <label>Saturday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Sat_04</fullName>
+                <default>false</default>
+                <label>Saturday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Sat_05</fullName>
+                <default>false</default>
+                <label>Saturday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Sat_06</fullName>
+                <default>false</default>
+                <label>Saturday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Sat_07</fullName>
+                <default>false</default>
+                <label>Saturday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Sat_08</fullName>
+                <default>false</default>
+                <label>Saturday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Sat_09</fullName>
+                <default>false</default>
+                <label>Saturday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Sat_10</fullName>
+                <default>false</default>
+                <label>Saturday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Sat_11</fullName>
+                <default>false</default>
+                <label>Saturday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Sat_12</fullName>
+                <default>false</default>
+                <label>Saturday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Sat_13</fullName>
+                <default>false</default>
+                <label>Saturday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Sat_14</fullName>
+                <default>false</default>
+                <label>Saturday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Sat_15</fullName>
+                <default>false</default>
+                <label>Saturday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Sat_16</fullName>
+                <default>false</default>
+                <label>Saturday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Sat_17</fullName>
+                <default>false</default>
+                <label>Saturday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Sat_18</fullName>
+                <default>false</default>
+                <label>Saturday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Sat_19</fullName>
+                <default>false</default>
+                <label>Saturday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Sat_20</fullName>
+                <default>false</default>
+                <label>Saturday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Sat_21</fullName>
+                <default>false</default>
+                <label>Saturday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Sat_22</fullName>
+                <default>false</default>
+                <label>Saturday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Sat_23</fullName>
+                <default>false</default>
+                <label>Saturday at 23:00</label>
+            </value>
+            <value>
+                <fullName>Sun_00</fullName>
+                <default>false</default>
+                <label>Sunday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Sun_01</fullName>
+                <default>false</default>
+                <label>Sunday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Sun_02</fullName>
+                <default>false</default>
+                <label>Sunday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Sun_03</fullName>
+                <default>false</default>
+                <label>Sunday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Sun_04</fullName>
+                <default>false</default>
+                <label>Sunday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Sun_05</fullName>
+                <default>false</default>
+                <label>Sunday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Sun_06</fullName>
+                <default>false</default>
+                <label>Sunday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Sun_07</fullName>
+                <default>false</default>
+                <label>Sunday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Sun_08</fullName>
+                <default>false</default>
+                <label>Sunday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Sun_09</fullName>
+                <default>false</default>
+                <label>Sunday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Sun_10</fullName>
+                <default>false</default>
+                <label>Sunday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Sun_11</fullName>
+                <default>false</default>
+                <label>Sunday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Sun_12</fullName>
+                <default>false</default>
+                <label>Sunday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Sun_13</fullName>
+                <default>false</default>
+                <label>Sunday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Sun_14</fullName>
+                <default>false</default>
+                <label>Sunday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Sun_15</fullName>
+                <default>false</default>
+                <label>Sunday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Sun_16</fullName>
+                <default>false</default>
+                <label>Sunday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Sun_17</fullName>
+                <default>false</default>
+                <label>Sunday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Sun_18</fullName>
+                <default>false</default>
+                <label>Sunday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Sun_19</fullName>
+                <default>false</default>
+                <label>Sunday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Sun_20</fullName>
+                <default>false</default>
+                <label>Sunday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Sun_21</fullName>
+                <default>false</default>
+                <label>Sunday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Sun_22</fullName>
+                <default>false</default>
+                <label>Sunday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Sun_23</fullName>
+                <default>false</default>
+                <label>Sunday at 23:00</label>
+            </value>
+            <value>
+                <fullName>Mon_00</fullName>
+                <default>false</default>
+                <label>Monday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Mon_01</fullName>
+                <default>false</default>
+                <label>Monday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Mon_02</fullName>
+                <default>false</default>
+                <label>Monday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Mon_03</fullName>
+                <default>false</default>
+                <label>Monday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Mon_04</fullName>
+                <default>false</default>
+                <label>Monday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Mon_05</fullName>
+                <default>false</default>
+                <label>Monday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Mon_06</fullName>
+                <default>false</default>
+                <label>Monday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Mon_07</fullName>
+                <default>false</default>
+                <label>Monday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Mon_08</fullName>
+                <default>false</default>
+                <label>Monday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Mon_09</fullName>
+                <default>false</default>
+                <label>Monday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Mon_10</fullName>
+                <default>false</default>
+                <label>Monday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Mon_11</fullName>
+                <default>false</default>
+                <label>Monday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Mon_12</fullName>
+                <default>false</default>
+                <label>Monday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Mon_13</fullName>
+                <default>false</default>
+                <label>Monday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Mon_14</fullName>
+                <default>false</default>
+                <label>Monday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Mon_15</fullName>
+                <default>false</default>
+                <label>Monday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Mon_16</fullName>
+                <default>false</default>
+                <label>Monday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Mon_17</fullName>
+                <default>false</default>
+                <label>Monday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Mon_18</fullName>
+                <default>false</default>
+                <label>Monday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Mon_19</fullName>
+                <default>false</default>
+                <label>Monday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Mon_20</fullName>
+                <default>false</default>
+                <label>Monday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Mon_21</fullName>
+                <default>false</default>
+                <label>Monday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Mon_22</fullName>
+                <default>false</default>
+                <label>Monday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Mon_23</fullName>
+                <default>false</default>
+                <label>Monday at 23:00</label>
+            </value>
+            <value>
+                <fullName>Tue_00</fullName>
+                <default>false</default>
+                <label>Tuesday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Tue_01</fullName>
+                <default>false</default>
+                <label>Tuesday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Tue_02</fullName>
+                <default>false</default>
+                <label>Tuesday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Tue_03</fullName>
+                <default>false</default>
+                <label>Tuesday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Tue_04</fullName>
+                <default>false</default>
+                <label>Tuesday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Tue_05</fullName>
+                <default>false</default>
+                <label>Tuesday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Tue_06</fullName>
+                <default>false</default>
+                <label>Tuesday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Tue_07</fullName>
+                <default>false</default>
+                <label>Tuesday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Tue_08</fullName>
+                <default>false</default>
+                <label>Tuesday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Tue_09</fullName>
+                <default>false</default>
+                <label>Tuesday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Tue_10</fullName>
+                <default>false</default>
+                <label>Tuesday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Tue_11</fullName>
+                <default>false</default>
+                <label>Tuesday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Tue_12</fullName>
+                <default>false</default>
+                <label>Tuesday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Tue_13</fullName>
+                <default>false</default>
+                <label>Tuesday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Tue_14</fullName>
+                <default>false</default>
+                <label>Tuesday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Tue_15</fullName>
+                <default>false</default>
+                <label>Tuesday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Tue_16</fullName>
+                <default>false</default>
+                <label>Tuesday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Tue_17</fullName>
+                <default>false</default>
+                <label>Tuesday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Tue_18</fullName>
+                <default>false</default>
+                <label>Tuesday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Tue_19</fullName>
+                <default>false</default>
+                <label>Tuesday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Tue_20</fullName>
+                <default>false</default>
+                <label>Tuesday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Tue_21</fullName>
+                <default>false</default>
+                <label>Tuesday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Tue_22</fullName>
+                <default>false</default>
+                <label>Tuesday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Tue_23</fullName>
+                <default>false</default>
+                <label>Tuesday at 23:00</label>
+            </value>
+            <value>
+                <fullName>Wed_00</fullName>
+                <default>false</default>
+                <label>Wednesday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Wed_01</fullName>
+                <default>false</default>
+                <label>Wednesday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Wed_02</fullName>
+                <default>false</default>
+                <label>Wednesday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Wed_03</fullName>
+                <default>false</default>
+                <label>Wednesday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Wed_04</fullName>
+                <default>false</default>
+                <label>Wednesday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Wed_05</fullName>
+                <default>false</default>
+                <label>Wednesday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Wed_06</fullName>
+                <default>false</default>
+                <label>Wednesday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Wed_07</fullName>
+                <default>false</default>
+                <label>Wednesday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Wed_08</fullName>
+                <default>false</default>
+                <label>Wednesday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Wed_09</fullName>
+                <default>false</default>
+                <label>Wednesday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Wed_10</fullName>
+                <default>false</default>
+                <label>Wednesday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Wed_11</fullName>
+                <default>false</default>
+                <label>Wednesday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Wed_12</fullName>
+                <default>false</default>
+                <label>Wednesday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Wed_13</fullName>
+                <default>false</default>
+                <label>Wednesday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Wed_14</fullName>
+                <default>false</default>
+                <label>Wednesday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Wed_15</fullName>
+                <default>false</default>
+                <label>Wednesday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Wed_16</fullName>
+                <default>false</default>
+                <label>Wednesday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Wed_17</fullName>
+                <default>false</default>
+                <label>Wednesday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Wed_18</fullName>
+                <default>false</default>
+                <label>Wednesday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Wed_19</fullName>
+                <default>false</default>
+                <label>Wednesday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Wed_20</fullName>
+                <default>false</default>
+                <label>Wednesday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Wed_21</fullName>
+                <default>false</default>
+                <label>Wednesday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Wed_22</fullName>
+                <default>false</default>
+                <label>Wednesday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Wed_23</fullName>
+                <default>false</default>
+                <label>Wednesday at 23:00</label>
+            </value>
+            <value>
+                <fullName>Thu_00</fullName>
+                <default>false</default>
+                <label>Thursday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Thu_01</fullName>
+                <default>false</default>
+                <label>Thursday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Thu_02</fullName>
+                <default>false</default>
+                <label>Thursday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Thu_03</fullName>
+                <default>false</default>
+                <label>Thursday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Thu_04</fullName>
+                <default>false</default>
+                <label>Thursday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Thu_05</fullName>
+                <default>false</default>
+                <label>Thursday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Thu_06</fullName>
+                <default>false</default>
+                <label>Thursday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Thu_07</fullName>
+                <default>false</default>
+                <label>Thursday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Thu_08</fullName>
+                <default>false</default>
+                <label>Thursday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Thu_09</fullName>
+                <default>false</default>
+                <label>Thursday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Thu_10</fullName>
+                <default>false</default>
+                <label>Thursday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Thu_11</fullName>
+                <default>false</default>
+                <label>Thursday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Thu_12</fullName>
+                <default>false</default>
+                <label>Thursday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Thu_13</fullName>
+                <default>false</default>
+                <label>Thursday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Thu_14</fullName>
+                <default>false</default>
+                <label>Thursday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Thu_15</fullName>
+                <default>false</default>
+                <label>Thursday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Thu_16</fullName>
+                <default>false</default>
+                <label>Thursday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Thu_17</fullName>
+                <default>false</default>
+                <label>Thursday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Thu_18</fullName>
+                <default>false</default>
+                <label>Thursday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Thu_19</fullName>
+                <default>false</default>
+                <label>Thursday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Thu_20</fullName>
+                <default>false</default>
+                <label>Thursday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Thu_21</fullName>
+                <default>false</default>
+                <label>Thursday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Thu_22</fullName>
+                <default>false</default>
+                <label>Thursday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Thu_23</fullName>
+                <default>false</default>
+                <label>Thursday at 23:00</label>
+            </value>
+            <value>
+                <fullName>Fri_00</fullName>
+                <default>false</default>
+                <label>Friday at 00:00</label>
+            </value>
+            <value>
+                <fullName>Fri_01</fullName>
+                <default>false</default>
+                <label>Friday at 01:00</label>
+            </value>
+            <value>
+                <fullName>Fri_02</fullName>
+                <default>false</default>
+                <label>Friday at 02:00</label>
+            </value>
+            <value>
+                <fullName>Fri_03</fullName>
+                <default>false</default>
+                <label>Friday at 03:00</label>
+            </value>
+            <value>
+                <fullName>Fri_04</fullName>
+                <default>false</default>
+                <label>Friday at 04:00</label>
+            </value>
+            <value>
+                <fullName>Fri_05</fullName>
+                <default>false</default>
+                <label>Friday at 05:00</label>
+            </value>
+            <value>
+                <fullName>Fri_06</fullName>
+                <default>false</default>
+                <label>Friday at 06:00</label>
+            </value>
+            <value>
+                <fullName>Fri_07</fullName>
+                <default>false</default>
+                <label>Friday at 07:00</label>
+            </value>
+            <value>
+                <fullName>Fri_08</fullName>
+                <default>false</default>
+                <label>Friday at 08:00</label>
+            </value>
+            <value>
+                <fullName>Fri_09</fullName>
+                <default>false</default>
+                <label>Friday at 09:00</label>
+            </value>
+            <value>
+                <fullName>Fri_10</fullName>
+                <default>false</default>
+                <label>Friday at 10:00</label>
+            </value>
+            <value>
+                <fullName>Fri_11</fullName>
+                <default>false</default>
+                <label>Friday at 11:00</label>
+            </value>
+            <value>
+                <fullName>Fri_12</fullName>
+                <default>false</default>
+                <label>Friday at 12:00</label>
+            </value>
+            <value>
+                <fullName>Fri_13</fullName>
+                <default>false</default>
+                <label>Friday at 13:00</label>
+            </value>
+            <value>
+                <fullName>Fri_14</fullName>
+                <default>false</default>
+                <label>Friday at 14:00</label>
+            </value>
+            <value>
+                <fullName>Fri_15</fullName>
+                <default>false</default>
+                <label>Friday at 15:00</label>
+            </value>
+            <value>
+                <fullName>Fri_16</fullName>
+                <default>false</default>
+                <label>Friday at 16:00</label>
+            </value>
+            <value>
+                <fullName>Fri_17</fullName>
+                <default>false</default>
+                <label>Friday at 17:00</label>
+            </value>
+            <value>
+                <fullName>Fri_18</fullName>
+                <default>false</default>
+                <label>Friday at 18:00</label>
+            </value>
+            <value>
+                <fullName>Fri_19</fullName>
+                <default>false</default>
+                <label>Friday at 19:00</label>
+            </value>
+            <value>
+                <fullName>Fri_20</fullName>
+                <default>false</default>
+                <label>Friday at 20:00</label>
+            </value>
+            <value>
+                <fullName>Fri_21</fullName>
+                <default>false</default>
+                <label>Friday at 21:00</label>
+            </value>
+            <value>
+                <fullName>Fri_22</fullName>
+                <default>false</default>
+                <label>Friday at 22:00</label>
+            </value>
+            <value>
+                <fullName>Fri_23</fullName>
+                <default>false</default>
+                <label>Friday at 23:00</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

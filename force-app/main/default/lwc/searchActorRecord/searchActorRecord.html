@@ -1,0 +1,22 @@
+<template>
+    <template if:true={results}>
+        <div class="iterator">
+            <template for:each={results} for:item="actor" for:index="index">
+                <!-- <div class="hoverButton" key={actor.id} onclick={getThisItem} data-index={actor.id}>
+                    <c-search-actor-record-image key={actor.id} upcoming-actor-data={actor} style="height: 300px; max-width:100; width: 200px;
+                    object-fit: cover;"></c-search-actor-record-image>
+                    <p class="actorName" key={actor.id}>{actor.name}</p>
+                </div> -->
+                <c-search-actor-record-blacklist class="rearchElementStyle" key={actor.id} actor-object={actor} onprogressvaluechange={hanldeProgressValueChange} onclick={getThisItem} data-index={actor.id}></c-search-actor-record-blacklist>
+            </template>
+<c-actor-information-modal actor-id={actorId}></c-actor-information-modal>
+</div>
+<div class="buttonSection">
+    <lightning-button label="First page" onclick={handleCounterFirst} disabled={disabledNaviDecrese}></lightning-button>
+    <lightning-button label="Previous page" onclick={handleCounterDecrese} disabled={disabledNaviDecrese}></lightning-button>
+    <lightning-button label="Next page" onclick={handleCounterIncrese} disabled={disabledNaviIncrese}></lightning-button>
+    <lightning-button label="Last page" onclick={handleCounterLast} disabled={disabledNaviIncrese}></lightning-button>
+
+</div>
+</template>
+</template>

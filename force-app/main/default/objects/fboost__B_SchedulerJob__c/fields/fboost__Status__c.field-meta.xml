@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF((NOW() - fboost__NextExecutionTime__c) &gt; 1, &apos;Critical&apos;, 
+			IF((NOW() - fboost__NextExecutionTime__c) &gt; (1060/1440), &apos;Delay 16-24h&apos;,
+						IF((NOW() - fboost__NextExecutionTime__c) &gt; (480/1440), &apos;Delay 8-16h&apos;,
+									IF((NOW() - fboost__NextExecutionTime__c) &gt; (240/1440), &apos;Delay 4-8h&apos;,
+												IF((NOW() - fboost__NextExecutionTime__c) &gt; (120/1440), &apos;Delay 2-4h&apos;,
+															IF((NOW() - fboost__NextExecutionTime__c) &gt; (60/1440), &apos;Delay 1-2h&apos;, 
+																		&apos;OK&apos;))))))</formula>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

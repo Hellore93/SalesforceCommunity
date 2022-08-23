@@ -1,0 +1,18 @@
+<!--
+ - Created by 48781 on 03.06.2022.
+ -->
+
+<aura:component description="AccountSearchMapp">
+    <aura:attribute name="mapMarkers" type="Object"/>
+
+    <aura:attribute name="selectedRows" type="List"/>
+    <aura:handler name="change" value="{!v.selectedRows}" action="{!c.mapsShow}"/>
+
+    <lightning:card title="Account Localization">
+        <lightning:map
+                mapMarkers="{! v.mapMarkers }"
+                markersTitle="{!v.markersTitle}"
+                selectedMarkerValue="{!v.selectedMarkerValue}"
+                onmarkerselect="{!c.handleMarkerSelect}"/>
+    </lightning:card>
+</aura:component>

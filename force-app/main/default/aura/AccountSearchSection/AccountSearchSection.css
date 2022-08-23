@@ -1,0 +1,26 @@
+/**
+ * Created by 48781 on 03.06.2022.
+ */
+
+.THIS {
+}
+
+.THIS .searchCard{
+    margin: 5px;
+}
+
+.THIS .informationCard{
+    margin: 5px;
+}
+
+.THIS .searchNameSection{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.THIS .buttonSection{
+    display:flex;
+    justify-content: center;
+}

@@ -1,0 +1,16 @@
+.FilmName {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.forEachWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.castSection {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}

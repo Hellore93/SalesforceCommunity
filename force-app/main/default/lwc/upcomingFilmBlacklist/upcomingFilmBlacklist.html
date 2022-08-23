@@ -1,0 +1,7 @@
+<template>
+    <div if:true={visibleBL} class="hoverButton">
+        <c-search-film-record-image upcoming-film-data={filmId} ></c-search-film-record-image>
+        <div class="oval">{filmId.vote_average}</div>
+        <p class="filmTitle">{filmId.original_title}</p>
+</div>
+</template>

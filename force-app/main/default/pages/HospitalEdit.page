@@ -1,0 +1,35 @@
+<apex:page id="HospitalEdit" standardController="Hospital__c" extensions="ViewEditHospitalController">
+    <apex:slds />
+    <div class="slds-scope">
+        <apex:form >
+
+            <apex:pageBlock title="{!$Label.Edit}">
+                <apex:pageBlockSection >
+                    <apex:facet name="header">{!$Label.General}</apex:facet>
+                    <apex:inputField value="{!query.Name}"/>
+                    <apex:inputField value="{!query.Email__c}"/>
+                    <apex:inputField value="{!query.Phone_Number__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:facet name="header">Address</apex:facet>
+                    <apex:inputField value="{!query.City__c}"/>
+                    <apex:inputField value="{!query.Street__c}"/>
+                    <apex:inputField value="{!query.Country__c}"/>
+                </apex:pageBlockSection>
+
+                <div class="slds-align_absolute-center">
+                    <apex:commandButton value="{!$Label.Save}"
+                                        action="{!save}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton value="{!$Label.Save_New}"
+                                        action="{!saveAndNew}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton value="{!$Label.Back}"
+                                        action="/apex/HospitalView?id={!hospitalId}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                </div>
+
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+</apex:page>

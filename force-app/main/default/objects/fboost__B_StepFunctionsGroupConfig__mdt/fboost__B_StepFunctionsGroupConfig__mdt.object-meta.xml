@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Defines the Step Functions Group which should be executed in single unit of work.</description>
+    <label>Boost Step Functions Group Config</label>
+    <pluralLabel>Boost Step Functions Group Config</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

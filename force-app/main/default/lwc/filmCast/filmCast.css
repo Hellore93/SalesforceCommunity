@@ -1,0 +1,45 @@
+.modalInformationSection {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainModal {
+    width: 70%;
+}
+
+.informationText {
+    margin-left: 15px;
+    font-size: medium;
+}
+
+.genresSection {
+    display: flex;
+    flex-direction: row;
+}
+
+.itemGenresText {
+    margin: 0 10px;
+}
+
+.filmType {
+    margin: 0 0 auto;
+}
+
+.castSection {
+    /* display: -webkit-box;
+    overflow: auto; */
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.forEachWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.ActorName {
+    text-align: center;
+    margin-bottom: 5px;
+}

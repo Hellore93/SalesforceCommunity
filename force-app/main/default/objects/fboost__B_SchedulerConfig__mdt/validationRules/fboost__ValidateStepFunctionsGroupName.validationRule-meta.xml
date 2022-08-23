@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__ValidateStepFunctionsGroupName</fullName>
+    <active>true</active>
+    <description>Checks if Class Name is Required</description>
+    <errorConditionFormula>(
+				ISPICKVAL(fboost__Type__c, &apos;Step Functions Group&apos;)
+) 
+&amp;&amp; ISBLANK(fboost__ClassName__c)</errorConditionFormula>
+    <errorDisplayField>fboost__ClassName__c</errorDisplayField>
+    <errorMessage>Class Name field need to contains the Step Functions Group API name (B_StepFunctionsGroupConfig__mdt.DeveloperName value)</errorMessage>
+</ValidationRule>

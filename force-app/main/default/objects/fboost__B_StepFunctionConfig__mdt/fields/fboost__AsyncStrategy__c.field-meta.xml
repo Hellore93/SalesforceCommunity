@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__AsyncStrategy__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <defaultValue>&quot;MultiQueueable&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Determines async execution strategy.
+Multi Queueable - process will be use multiple Queueable jobs to process requests (can be configured in Async Job Settings)
+Direct - process will be executed synchronously in Platform Event trigger (use it only for simple logic)
+Future - process will be executed in Salesforce Future method
+Queueable - process will be executed in Salesforce Queueable
+Batch - process will be executed in Salesforce Batch
+Custom - please provide a custom execution strategy name</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Determines async execution strategy.
+Multi Queueable - process will be use multiple Queueable jobs to process requests (can be configured in Async Job Settings)
+Direct - process will be executed synchronously in Platform Event trigger (use it only for simple logic)
+Future - process will be executed in Salesforce Future method
+Queueable - process will be executed in Salesforce Queueable
+Batch - process will be executed in Salesforce Batch
+Custom - please provide a custom execution strategy name</inlineHelpText>
+    <label>Async Strategy</label>
+    <required>false</required>
+    <securityClassification>Public</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MultiQueueable</fullName>
+                <default>true</default>
+                <label>Multi Queueable</label>
+            </value>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>Queueable</fullName>
+                <default>false</default>
+                <label>Queueable</label>
+            </value>
+            <value>
+                <fullName>Batch</fullName>
+                <default>false</default>
+                <label>Batch</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

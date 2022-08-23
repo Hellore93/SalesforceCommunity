@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__AllActive</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>fboost__ObjectName__c</columns>
+    <columns>fboost__TriggerEvent__c</columns>
+    <columns>fboost__RecordsSplitStrategy__c</columns>
+    <columns>fboost__RecordsSplitConfig__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>fboost__IsActive__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Active</label>
+</ListView>

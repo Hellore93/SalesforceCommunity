@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__AsyncThresholdForAsyncJobExecution__c</fullName>
+    <defaultValue>90</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Async Threshold for Async Jobs real-time execution. System will wait with processing till Platform Async Limit will go lower then provided threshold</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Async Threshold for Async Jobs real-time execution. System will wait with processing till Platform Async Limit will go lower then provided threshold</inlineHelpText>
+    <label>Async Threshold for Async Jobs Execution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

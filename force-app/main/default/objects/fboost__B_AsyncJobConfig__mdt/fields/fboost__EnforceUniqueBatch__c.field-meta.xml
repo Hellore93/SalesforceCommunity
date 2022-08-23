@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__EnforceUniqueBatch__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>With this flag system enabled Enforces Batch Uniqueness - system will not run more than 1 batch process (works only with Scheduled Batches)</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>With this flag system enabled Enforces Batch Uniqueness - system will not run more than 1 batch process (works only with Scheduled Batches)</inlineHelpText>
+    <label>Enforce Unique Batch</label>
+    <type>Checkbox</type>
+</CustomField>

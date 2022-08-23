@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__AsyncLimitThreshold__c</fullName>
+    <defaultValue>1.0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Determines when to Async Apex job will be executed only when the actual Platform Async Limit is lower than the provided threshold</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Async Apex job will be executed only when the actual Platform Async Limit is lower than the provided threshold.</inlineHelpText>
+    <label>Async Limit Threshold</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Percent</type>
+</CustomField>

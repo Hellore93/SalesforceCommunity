@@ -1,0 +1,124 @@
+<!--
+ - Created by 48781 on 04.05.2022.
+ -->
+
+<apex:page id="ImportDoctors" controller="ImportDoctorController">
+    <apex:slds />
+    <apex:form >
+        <apex:pageBlock title="Upload Doctors file">
+
+            <apex:pageBlockSection >
+                <apex:inputFile value="{!csvFileBody}"
+                                filename="{!csvAsString}"
+                                disabled="{!ifDisable}"/>
+
+                <apex:actionRegion renderRegionOnly="false">
+                    <apex:commandButton action="{!importCSVFile}"
+                                        value="Process"
+                                        disabled="{!ifDisable}"
+                                        style="float: right"/>
+                    <apex:commandButton action="{!getImportTemplate}"
+                                        value="Origin Template"
+                                        reRender="ImportDoctors"
+                                        style="margin-right: 20px; float: right;"/>
+
+                </apex:actionRegion>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+        <apex:actionRegion >
+            <apex:pageBlock title="Import Table" id="ImportDoctors" rendered="{!ifDisable}">
+                <apex:pageBlockTable value="{!doctorListLoad}" var="d">
+
+                    <apex:column headerValue="Send Doctor ?">
+                        <apex:inputCheckbox value="{!d.isCheckbox}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.First_Name}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Doctor_Name__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.Last_Name}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Name}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.Phone_Number}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Phone_number__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.Email}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Email__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.Speciality}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Speciality__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            "Date of Birth"
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.DateBorn__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.City}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.City__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.Street}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Street__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            {!$Label.Country}
+                        </apex:facet>
+                        <apex:outputField value="{!d.extendDoc.Country__c}"/>
+                    </apex:column>
+                    <apex:column rendered="{!descriptionVisible}">
+                        <apex:facet name="header">
+                            {!$Label.Description}
+                        </apex:facet>
+                        <apex:outputLink value="'/apex/DoctorView?Id=' + {!d.insertDocId}" disabled="{!d.isDisabled}">
+                            {!d.information}
+                        </apex:outputLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="All"
+                                        action="{!allCheckbox}"
+                                        reRender="ImportDoctors"
+                                        style="float:left"/>
+                    <apex:commandButton value="None"
+                                        action="{!noneCheckbox}"
+                                        reRender="ImportDoctors"
+                                        style="float:left"/>
+                    <apex:commandButton value="Reverse"
+                                        action="{!reverseCheckbox}"
+                                        reRender="ImportDoctors"
+                                        style="float:left"/>
+                    <apex:commandButton value="Import"
+                                        action="{!importCheckedFile}"
+                                        reRender="ImportDoctors"
+                                        style="float: right;"/>
+                </apex:pageBlockButtons>
+
+            </apex:pageBlock>
+        </apex:actionRegion>
+
+    </apex:form>
+</apex:page>

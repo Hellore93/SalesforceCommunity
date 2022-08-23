@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__ValidateCleanupClassName</fullName>
+    <active>true</active>
+    <description>Checks if Class Name is Required</description>
+    <errorConditionFormula>(
+				ISPICKVAL(fboost__Type__c, &apos;Cleanup&apos;)
+) 
+&amp;&amp; NOT(ISBLANK(fboost__ClassName__c))</errorConditionFormula>
+    <errorDisplayField>fboost__ClassName__c</errorDisplayField>
+    <errorMessage>Class Name for Cleanup job is not supported</errorMessage>
+</ValidationRule>

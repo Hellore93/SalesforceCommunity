@@ -1,0 +1,203 @@
+<!--
+ - Created by 48781 on 11.05.2022.
+ -->
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<apex:page controller="web2leadController" showHeader="false" showQuickActionVfHeader="false">
+    <html>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8" />
+    <style>
+        body {
+            background-image: url(https://img.freepik.com/darmowe-wektory/abstrakcjonistyczny-blekitny-geometryczny-ksztalta-tlo_1035-17545.jpg?w=2000)
+        }
+
+        input {
+            border-radius: 5px;
+            text-align: center;
+            height: 25px;
+            border: 0;
+        }
+
+        .submit {
+            width: 100px;
+            height: 40px;
+            margin: 0 auto;
+        }
+
+        .city {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 15px;
+            margin-bottom: 0.5em;
+        }
+
+        .form {
+            height: 100vh;
+            display: flex;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .displayClass {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        }
+    </style>
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <form class="{!form}" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+        <div style="   
+        width: 50%;
+        margin: auto;
+        border-radius: 15px;
+        background-color: #6060606e;">
+            <div style="text-align: center; font-size: 35px; margin-top: 30px; text-decoration: underline;">CONTACT FORM</div>
+            <div style="display: flex; flex-direction:row; justify-content: center; text-align: center; margin-top: 10px;">
+
+                <input type="hidden" name="oid" value="00D7Q000006G1tX" />
+                <input type="hidden" name="retURL" value="https://rafaelcourse-developer-edition.eu44.force.com/hospitalSite?success=true"
+                />
+
+                <!--  ----------------------------------------------------------------------  -->
+                <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                <!--  these lines if you wish to test in debug mode.                          -->
+                <!--  <input type="hidden" name="debug" value=1>                              -->
+                <!--  <input type="hidden" name="debugEmail"                                  -->
+                <!--  value="rafal.sztorc@britenet.com.pl">                                   -->
+                <!--  ----------------------------------------------------------------------  -->
+
+                <div class="leftColumn" style="width: 30%; display: flex; flex-direction: column; margin: 0 20px;">
+                    <label for="first_name">First Name</label>
+                    <input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+                    <br/>
+
+                    <label for="email">Email *</label>
+                    <input id="email" maxlength="80" name="email" size="20" type="text" required="required" />
+                    <br/>
+
+                    <label for="country">Country</label>
+                    <input id="country" maxlength="40" name="country" size="20" type="text" />
+                    <br/>
+                </div>
+
+                <div class="rightColumn" style="width: 30%; display: flex; flex-direction: column; margin: 0 20px;">
+                    <label for="last_name">Last Name *</label>
+                    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required="required" />
+                    <br/>
+
+                    <label for="company">Company *</label>
+                    <input id="company" maxlength="40" name="company" size="20" type="text" required="required" />
+                    <br/>
+
+                    <label for="state">State/Province</label>
+                    <input id="state" maxlength="20" name="state" size="20" type="text" />
+                    <br/>
+                </div>
+            </div>
+
+            <div class="bottomSection" style="display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 60%;
+            margin: 0 auto;
+            margin-bottom: 30px;">
+                <label for="city">City</label>
+                <input class="city" id="city" maxlength="40" name="city" size="20" type="text" />
+                <br/>
+
+                <input type="submit" class="submit" name="submit" />
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="{!information}">
+        <div style="font-size: 35px; margin: auto;">
+            Thank you, We contact with you soon.</div>
+    </div>
+
+    </html>
+
+    <style type='text/css'>
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #005290;
+            font-family: "Arial", sans-serif;
+        }
+
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #005290;
+        }
+    </style>
+
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function (gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true; //Or false
+            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+            //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+            //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+            //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+            // Settings for Chat
+            //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+            //};
+            //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+            //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+            //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+
+            embedded_svc.init(
+                'https://britenet93-dev-ed.my.salesforce.com',
+                'https://rafaelcourse-developer-edition.eu44.force.com/hospitalSite',
+                gslbBaseURL,
+                '00D7Q000006G1tX',
+                'NewChannel',
+                {
+                    baseLiveAgentContentURL: 'https://c.la2-c1-fra.salesforceliveagent.com/content',
+                    deploymentId: '5727Q000000kkdP',
+                    buttonId: '5737Q000000klXg',
+                    baseLiveAgentURL: 'https://d.la2-c1-fra.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'NewChannel',
+                    isOfflineSupportEnabled: true
+                }
+            );
+        };
+
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://britenet93-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function () {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
+
+</apex:page>

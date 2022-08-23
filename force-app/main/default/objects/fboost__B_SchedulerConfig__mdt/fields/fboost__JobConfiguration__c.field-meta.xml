@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__JobConfiguration__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Additional scheduler job configuration. For clean-up job should contain a SOQL query that determines which records should be removed or Salesforce Object Name</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Additional scheduler job configuration. For clean-up job should contain a SOQL query that determines which records should be removed or Salesforce Object Name</inlineHelpText>
+    <label>Job Configuration</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

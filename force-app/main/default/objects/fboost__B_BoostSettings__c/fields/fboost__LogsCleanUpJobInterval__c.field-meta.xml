@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__LogsCleanUpJobInterval__c</fullName>
+    <defaultValue>12</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Determines Boost Logs clean-up job interval in hours. Available values: 1, 2, 3, 4, 6, 8, 12</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Determines Boost Logs clean-up job interval in hours. Available values: 1, 2, 3, 4, 6, 8, 12</inlineHelpText>
+    <label>Boost Logs Clean-Up Job Interval</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

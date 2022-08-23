@@ -1,0 +1,31 @@
+.THIS {}
+
+.THIS .searchSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.THIS .searchSection lightning-input {
+    width: 300px;
+    padding: 0 20px;
+}
+
+.THIS .filmSection .slds-card__body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.THIS .iterationWrap {
+    display: -webkit-box;
+    overflow: auto;
+}
+
+.THIS .filmItem {
+    margin: 0 15px;
+}
+
+.THIS .filmItem img{
+    width: 150px;
+    border-radius: 10%;
+}

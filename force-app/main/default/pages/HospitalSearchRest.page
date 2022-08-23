@@ -1,0 +1,323 @@
+<apex:page id="HospitalSearchRest" controller="HospitalSearchRestController" showHeader="true" docType="html-5.0"
+           lightningStylesheets="true">
+    <apex:slds />
+    <script type="text/javascript">
+
+    function messageController(){
+        let messageWrapper = document.getElementById("messageWrapper");
+        messageWrapper.classList.toggle("slds-hide");
+        setTimeout(function(){
+            messageWrapper.classList.toggle("slds-hide");
+        }, 4000);
+    }
+
+
+
+
+
+
+
+
+    </script>
+    <style>
+   #messageWrapper{width: 630px; position: absolute; top: 50px; z-index: 10000; left: 33vw}
+    .hidden{display:none}
+    div#datePicker{z-index:10000}
+    .show{}
+    span#DoctorSearchSoap:pBlock:form:j_id2{color:red}
+    #editNewField{display:flex; flex-direction:row; justify-content: center;}
+    .mainModalWrapper{margin: 30px;}
+    .modalItem{display:flex; flex-direction:column; margin-top: 10px}
+    #background{height:100%;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background: rgb(176 196 223);
+    }
+    .searchSection{display:flex; flex-direction:row; justify-content: center; text-align:center}
+    .searchItem{display:flex; flex-direction:column; margin: 0px 20px;}
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <div class="slds-brand-band slds-brand-band_medium" id="background">
+        <apex:outputPanel id="outPanel" style="position:sticky; z-index:1000;">
+            <apex:form id="form">
+
+                <div class="slds-scoped-notification slds-media slds-media_center {!messageTheme} slds-hide"
+                     id="messageWrapper" role="status" style="position:fixed;">
+                    <div class="slds-media__figure">
+                     <span class="slds-icon_container slds-icon-utility-success" title="success">
+                       <svg class="slds-icon slds-icon_small" xmlns:xlink="http://www.w3.org/2001/XMLSchema-instance"
+                            aria-hidden="true">
+                         <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#success')}"></use>
+                       </svg>
+                     </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <p>{!messageToastContext}</p>
+                    </div>
+                </div>
+
+                <div class="slds-page-header" style="width: 95%; margin: 0 auto; margin-top: 10px">
+                    <div class="slds-page-header__row">
+                        <div class="slds-page-header__col-title">
+                            <div class="slds-media">
+                                <div class="slds-media__body">
+                                    <div class="slds-page-header__name">
+                                        <div class="slds-page-header__name-title">
+                                            <h1>
+                                                <span class="slds-page-header__title slds-truncate">Ultra speed search Hospital V1.0!!</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-align_absolute-center slds-m-bottom_x-small slds-m-top_small">
+                    <apex:commandButton value="{!$Label.Search}"
+                                        action="{!getHospital}"
+                                        styleClass="slds-button slds-button_outline-brand"
+                                        reRender="form"/>
+                    <apex:actionRegion renderRegionOnly="false">
+                        <apex:commandButton value="{!$Label.New}"
+                                            action="{!showModal}"
+                                            styleClass="slds-button slds-button_success"/>
+                    </apex:actionRegion>
+                </div>
+
+                <div class="searchSection">
+                    <div class="searchItem">
+                        <span>Hospital Name :</span>
+                        <apex:inputField value="{!hospital.Name}" style="width: 150px;" styleClass="slds-input"/>
+                    </div>
+                    <div class="searchItem">
+                        <span>Hospital Country :</span>
+                        <apex:selectList value="{!defaultCountry}" multiSelect="false" size="1"
+                                         styleClass="slds-input" style="text-align:center"
+                                         onChange="getCountryValue(this.options[this.selectedIndex].text);">
+                            <apex:selectOptions value="{!globalCountryList}"/>
+                        </apex:selectList>
+
+                        <apex:actionFunction name="getCountryValue" reRender="adasd"
+                                             status="loading">
+                            <apex:param assignTo="{!selectedCountry}" value="" name="paramName"/>
+                        </apex:actionFunction>
+
+                    </div>
+                </div>
+                <p class="slds-align_absolute-center" style="color:red">{!messageSoap}</p>
+                <apex:outputPanel rendered="{!isRecordExist}">
+                    <div class="slds-page-header slds-m-top_small"
+                         style="width: 95%; margin: 0 auto; margin-top: 10px">
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__body">
+                                        <div class="slds-page-header__name">
+                                            <div class="slds-page-header__name-title">
+                                                <h1>
+                                                    <span class="slds-page-header__title slds-truncate">Doctor Table</span>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+                           aria-labelledby="element-with-table-label other-element-with-table-label"
+                           style="width: 95%; margin: 0 auto; margin-bottom: 10px;">
+                        <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Action">Action</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Hospital Name">Hospital Name</div>
+                            </th>
+                            <th class="" scope="col">
+                                <!--                                <div class="slds-truncate" title="Hospital Email">ParametrId</div>-->
+                                <div class="slds-truncate" title="Hospital Email">Hospital Email</div>
+                            </th>
+                            <th class="" scope="col">
+                                <!--                                <div class="slds-truncate" title="Country">External Id</div>-->
+                                <div class="slds-truncate" title="Country">Country</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="City">City</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Street">Street</div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <apex:repeat value="{!listOfObject}" var="h">
+                            <tr class="slds-hint-parent">
+                                <th data-label="Doctor Table" scope="row">
+                                    <div class="slds-truncate" title="Cloudhub">
+                                        <apex:commandLink id="editLink" title=""
+                                                          value="Edit"
+                                                          style="font-weight:bold"
+                                                          action="{!editHospital}">
+                                            <apex:param name="editParamId" value="{!h.hospitalIdParametr__c}"
+                                                        assignTo="{!hospitalToDeleteEdit}"/>
+                                        </apex:commandLink>
+                                        |&nbsp;
+                                        <apex:commandLink value="Delete"
+                                                          action="{!deleteHospital}"
+                                                          onComplete="messageController()"
+                                                          reRender="outPanel"
+                                                          onClick="if(!confirm('{!$Label.Delete_Button_From_Doctor_View}')) return false;">
+                                            <apex:param name="deleteParam" value="{!h.hospitalIdParametr__c}"
+                                                        assignTo="{!hospitalToDeleteEdit}"/>
+                                        </apex:commandLink>
+                                    </div>
+                                </th>
+                                <td data-label="Doctor Name">
+                                    <div class="slds-truncate" title="">
+                                        <apex:outputText value="{!h.Name}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Doctor Last Name">
+                                    <div class="slds-truncate" title="">
+                                        <!--                                        <apex:outputText value="{!h.hospitalIdParametr__c}"/>-->
+                                        <apex:outputText value="{!h.Email__c}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Doctor Speciality">
+                                    <div class="slds-truncate" title="">
+                                        <!--                                        <apex:outputText value="{!h.externalId__c}"/>-->
+                                        <apex:outputText value="{!h.Country__c}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Doctor Phone number">
+                                    <div class="slds-truncate" title="">
+                                        <apex:outputText value="{!h.City__c}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Doctor email">
+                                    <div class="slds-truncate" title="">
+                                        <apex:outputText value="{!h.Street__c}"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                        </tbody>
+                    </table>
+                </apex:outputPanel>
+
+
+                <div class="{!modalClass}" id="popup">
+                    <section role="dialog" tabindex="-1" aria-modal="true"
+                             aria-label="Meaningful description of the modal content"
+                             class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless"
+                                 id="modal-content-id-1">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate"
+                                        title="Panel Header" style="justify-content:center">{!modalHeader}</h2>
+                                </div>
+                                <div id="editNewField">
+                                    <div class="mainModalWrapper">
+                                        <div class="modalItem">
+                                            <span>Hospital Name</span>
+                                            <apex:inputField value="{!existOrNewHospital.Name}"
+                                                             styleClass="slds-input"/>
+                                        </div>
+                                        <div class="modalItem">
+                                            <span>Hospital Email</span>
+                                            <apex:inputField value="{!existOrNewHospital.Email__c}"
+                                                             styleClass="slds-input"/>
+                                        </div>
+
+                                        <div class="modalItem">
+                                            <span>Hospital Country</span>
+                                            <apex:selectList value="{!defaultCountry}" multiSelect="false" size="1"
+                                                             styleClass="slds-input" style="text-align:center"
+                                                             onChange="getNewHospitalCountryValue(this.options[this.selectedIndex].text);">
+                                                <apex:selectOptions value="{!globalCountryList}"/>
+                                            </apex:selectList>
+
+                                            <apex:actionFunction name="getNewHospitalCountryValue"
+                                                                 reRender="adasd"
+                                                                 status="loading">
+                                                <apex:param assignTo="{!selectedCountryForNew}"
+                                                            value=""
+                                                            name="paramName"/>
+                                            </apex:actionFunction>
+
+                                        </div>
+                                        <div class="modalItem">
+                                            <span>Hospital City</span>
+                                            <apex:inputField value="{!existOrNewHospital.City__c}"
+                                                             styleClass="slds-input"/>
+                                        </div>
+                                        <div class="modalItem">
+                                            <span>Hospital street</span>
+                                            <apex:inputField value="{!existOrNewHospital.Street__c}"
+                                                             styleClass="slds-input"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="slds-modal__footer">
+                                <apex:commandButton value="Close"
+                                                    styleClass="slds-button slds-button_destructive"
+                                                    action="{!closeModal}"
+                                                    disabled="{!isCancelDisable}"/>
+                                <apex:commandButton value="Save"
+                                                    styleClass="slds-button slds-button_brand"
+                                                    action="{!saveModalResponse}"
+                                                    onComplete="messageController()"
+                                                    reRender="outPanel"/>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+                </div>
+
+                <apex:outputPanel rendered="{!deleteModal}">
+                    <section role="dialog" tabindex="-1" aria-modal="true"
+                             aria-label="Meaningful description of the modal content"
+                             class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                                <svg class="slds-button__icon slds-button__icon_large"
+                                     xmlns:xlink="http://www.w3.org/2001/XMLSchema-instance" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                </svg>
+                                <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+                            <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless"
+                                 id="modal-content-id-1">
+                                {!$Label.Delete_Button_From_Doctor_View}
+                            </div>
+                            <div class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" aria-label="Cancel and close">
+                                    Cancel
+                                </button>
+                                <button class="slds-button slds-button_brand">Yes</button>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+                </apex:outputPanel>
+
+            </apex:form>
+        </apex:outputPanel>
+    </div>
+</apex:page>

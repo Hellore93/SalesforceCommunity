@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__BlockTriggerDataChanges__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Blocks all modifications (through Modification Context) that are related to Trigger Context records in &apos;after insert&apos;, &apos;after update&apos;, &apos;after delete&apos; and &apos;after undelete&apos; trigger handlers. The system will throw BoostException when the code will try to modify such records. This type of operations should be executed in the Before triggers.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Blocks all modifications (through Modification Context) that are related to Trigger Context records in &apos;after insert&apos;, &apos;after update&apos;, &apos;after delete&apos; and &apos;after undelete&apos; trigger handlers. The system will throw BoostException when the code will try to modify such records. This type of operations should be executed in the Before triggers.</inlineHelpText>
+    <label>Block trigger data changes</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<!--
+ - Created by 48781 on 02.06.2022.
+ -->
+
+<aura:component implements="force:appHostable" description="UpcomingFilms" controller="Aura_SearchFilms_Controller">
+    <aura:attribute name="filmName" type="String"/>
+    <aura:attribute name="upcomingFilms" type="list"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="iterationWrap">
+        <aura:iteration items="{!v.upcomingFilms}" var="f">
+            <div class="filmItem">
+                <img src="{! 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + f.backdrop_path}"/>
+                <p style="text-align: center">{!f.title}</p>
+                <p style="text-align: center">{!f.release_date}</p>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

@@ -1,0 +1,59 @@
+<apex:page id="DoctorEdit" standardController="Doctor__c" extensions="ViewEditDoctorController">
+    <apex:slds />
+    <div class="slds-scope">
+        <apex:form >
+
+            <apex:pageBlock title="{!editNewTitle}">
+                <div style="display: flex; flex-direction: row; height: 15%">
+                    <div style="width: 10%; margin: 0 auto ; display: flex; flex-direction: column">
+                        <apex:image value="/servlet/servlet.FileDownload?file={!PhotoId}"
+                                    rendered="{!NOT(ISBLANK(PhotoId))}" width="95%" height="95%"/>
+
+                            <apex:inputFile id="uploadFile"
+                                            accept="image/jpeg,image/png"
+                                            value="{!att.body}"
+                                            fileName="{!att.name}"/>
+                            <apex:commandButton value="{!$Label.Upload}" action="{!getNewPhoto}"/>
+                            <apex:commandButton value="{!$Label.Default_Photo}" action="{!setDefaultPhoto}"/>
+                            <apex:pageMessages />
+
+                        <apex:actionFunction name="sendPhoto" action="{!getNewPhoto}" reRender="mainForm">
+                            <apex:param name="param1" value="" assignTo="{!newPhotoUrl}"/>
+                        </apex:actionFunction>
+                    </div>
+                    <div style="width: 90%">
+                        <apex:pageBlockSection >
+                            <apex:facet name="header">General</apex:facet>
+                            <apex:inputField value="{!query.Doctor_Name__c}"/>
+                            <apex:inputField value="{!query.Name}" required="true"/>
+                            <apex:inputField value="{!query.Phone_number__c}"/>
+                            <apex:inputField value="{!query.Email__c}"/>
+                            <apex:inputField value="{!query.Speciality__c}"/>
+                            <apex:inputField value="{!query.DateBorn__c}"/>
+                        </apex:pageBlockSection>
+                    </div>
+                </div>
+
+                <apex:pageBlockSection >
+                    <apex:facet name="header">Address</apex:facet>
+                    <apex:inputField value="{!query.City__c}"/>
+                    <apex:inputField value="{!query.Street__c}"/>
+                    <apex:inputField value="{!query.Country__c}"/>
+                </apex:pageBlockSection>
+
+                <div class="slds-align_absolute-center">
+                    <apex:commandButton value="{!$Label.Save}"
+                                        action="{!save}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton value="{!$Label.Save_New}"
+                                        action="{!saveAndNew}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton value="{!$Label.Back}"
+                                        action="/apex/DoctorView?id={!docId}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                </div>
+
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+</apex:page>

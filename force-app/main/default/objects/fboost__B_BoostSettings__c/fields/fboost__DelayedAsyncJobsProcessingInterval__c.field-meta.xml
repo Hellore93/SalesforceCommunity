@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__DelayedAsyncJobsProcessingInterval__c</fullName>
+    <defaultValue>30</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Determines delayed async jobs processing interval in minutes. Available values: 5, 10, 15, 30, 60</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Determines delayed async jobs processing interval in minutes. Available values: 5, 10, 15, 30, 60</inlineHelpText>
+    <label>Delayed Async Jobs Processing Interval</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

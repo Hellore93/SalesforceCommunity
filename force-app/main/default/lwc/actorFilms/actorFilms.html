@@ -1,0 +1,35 @@
+<template>
+    <template if:true={showFilmCast}>
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-account" title="account">
+                    <span class="slds-assistive-text">Actor films</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <a class="slds-card__header-link slds-truncate">
+                      <span>Actor films</span>
+                    </a>
+                  </h2>
+                </div>
+              </header>
+            </div>
+        </article>
+
+        <div class="castSection">
+            <template for:each={castResults.cast} for:item="castResults" for:index="index">
+                <div key={castResults.id} class="forEachWrapper" onclick={getThisItem} data-index={castResults.id}>
+                <c-search-film-record-image key={castResults.id} upcoming-film-data={castResults} style="height: 300px;
+                object-fit: cover; max-width:100; width: 200px;"></c-search-film-record-image>   
+                <p key={castResults.id} class="FilmName">{castResults.original_title}</p>
+                <p key={castResults.id} class="FilmName">Character Name: {castResults.character}</p>
+            </div>
+            </template>
+</div>
+
+<c-film-information-modal film-id={filmId} style="z-index: 55555; width: 1000px;"></c-film-information-modal>
+</template>
+</template>

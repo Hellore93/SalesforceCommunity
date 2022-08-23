@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Async Job event is used to trigger Async Job specified in the parameters</description>
+    <eventType>HighVolume</eventType>
+    <label>Boost Async Job Event</label>
+    <pluralLabel>Boost Async Job Events</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

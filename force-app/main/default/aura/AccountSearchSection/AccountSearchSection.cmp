@@ -1,0 +1,36 @@
+<!--
+ - Created by 48781 on 03.06.2022.
+ -->
+
+<aura:component description="AccountSearchSection" controller="Aura_AccountSearch_Controller">
+    <aura:attribute name="accountName" type="String" />
+    <aura:attribute name="mycolumns" type="List" />
+    <aura:attribute name="mydata" type="Object" />
+    <aura:attribute name="selectedRows" type="List" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+
+    <div class="mainWrapper" style="display: flex; flex-direction: row;">
+        <diV class="searchCard" style="width: 60%;">
+            <lightning:card title="Search Section">
+                <div class="searchSection">
+                    <div class="searchNameSection" onkeyup="{! c.startSearch }">
+                        <lightning:input aura:id="enter-account-name" name="enter-search" label="Write account name and press enter" type="search" />
+                    </div>
+                    <div class="buttonSection">
+                        <lightning:button class="newAccountButton" variant="brand" label="New" title="New" onclick="{!c.newAccount}" />
+                        <lightning:button class="newAccountButton" variant="brand" label="Clear" title="Clear" onclick="{!c.clear}" />
+                    </div>
+                </div>
+            </lightning:card>
+            <lightning:card title="Data Table">
+                <lightning:datatable data="{! v.mydata }" columns="{! v.mycolumns }" keyField="Id" hideCheckboxColumn="true" onrowaction="{!c.handleRowAction}" />
+            </lightning:card>
+        </diV>
+
+        <div class="informationCard" style=" width: 40%;">
+            <c:AccountSearchDetails selectedRows="{!v.selectedRows}" />
+            <c:AccountSearchMapp selectedRows="{!v.selectedRows}" />
+        </div>
+
+    </div>
+</aura:component>

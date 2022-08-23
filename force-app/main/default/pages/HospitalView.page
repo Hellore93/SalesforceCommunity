@@ -1,0 +1,32 @@
+<apex:page standardController="Hospital__c" extensions="ViewEditHospitalController" id="HospitalView">
+    <apex:slds />
+    <div class="slds-scope">
+        <apex:form >
+            <apex:pageBlock title="{!$Label.View}">
+                <apex:pageBlockSection >
+                    <apex:facet name="header">{!$Label.General}</apex:facet>
+                    <apex:outputField value="{!query.Name}"/>
+                    <apex:outputField value="{!query.Email__c}"/>
+                    <apex:outputField value="{!query.Phone_Number__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:facet name="header">{!$Label.Address}</apex:facet>
+                    <apex:outputField value="{!query.City__c}"/>
+                    <apex:outputField value="{!query.Street__c}"/>
+                    <apex:outputField value="{!query.Country__c}"/>
+                </apex:pageBlockSection>
+
+                <div class="slds-align_absolute-center">
+                    <apex:commandButton value="Edit"
+                                        action="/apex/HospitalEdit?id={!hospitalId}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton value="Delete" action="{!deleteHospital}"
+                                        onclick="if(!confirm('{!$Label.Delete_Button_From_Hospital_View}')) return false;"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                </div>
+
+            </apex:pageBlock>
+        </apex:form>
+        <apex:relatedList list="Contracts__r" pageSize="5"/>
+    </div>
+</apex:page>

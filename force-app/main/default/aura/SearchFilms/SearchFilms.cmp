@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable" controller="Aura_SearchFilms_Controller">
+    <aura:attribute name="filmName" type="String"/>
+    <aura:attribute name="filmList" type="list"/>
+
+    <aura:attribute name="columns" type="List"/>
+
+    <lightning:card title="Search Film">
+        <div class="searchSection" onkeyup="{! c.handleKeyUp }">
+            <lightning:input
+                    aura:id="enter-search-film-name"
+                    name="enter-search"
+                    label="Write film name and press enter"
+                    type="search"/>
+        </div>
+    </lightning:card>
+
+    <lightning:card title="Film" class="filmSection">
+        <div class="iterationWrap">
+            <aura:iteration items="{!v.filmList}" var="f">
+                <div class="filmItem">
+                    <img src="{! 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + f.backdrop_path}"/>
+                    <p style="text-align: center">{!f.title}</p>
+                </div>
+            </aura:iteration>
+        </div>
+    </lightning:card>
+
+    <lightning:card title="Upcoming Films">
+        <c:UpcomingFilms />
+    </lightning:card>
+
+</aura:component>

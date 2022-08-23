@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__FeatureToggleService__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Feature Toggle Service is used to enable or disable different system functionalities. Please provide a class name that implements BoostPlugins.FeatureToggleService interface</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Feature Toggle Service is used to enable or disable different system functionalities. Please provide a class name that implements BoostPlugins.FeatureToggleService interface</inlineHelpText>
+    <label>Feature Toggle Service</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

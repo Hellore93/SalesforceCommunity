@@ -1,0 +1,22 @@
+:host {}
+              
+              .iterationWrap {}
+              
+              .searchCheckboxSection {
+                  font-size: revert;
+              }
+              
+              .searchCheckboxSectionWrapper {
+                  margin: 0 0 auto;
+                  text-align: center;
+              }
+              
+              .searchInput {
+                  text-align: center;
+                  justify-content: center;
+                  display: flex;
+              }
+              
+              .search {
+                  width: 50%;
+              }

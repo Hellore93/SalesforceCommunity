@@ -1,0 +1,113 @@
+<apex:page controller="SearchDoctorController" id="SearchDoctor">
+    <apex:slds />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <style>
+            body { font-family: 'Arial Unicode MS'; }
+
+        </style>
+    </head>
+    <div class="slds-scope">
+        <apex:form >
+            <apex:pageBlock title="{!$Label.Search_Doctors}" id="doctorTable">
+                <apex:pageBlockSection >
+                    <apex:inputField value="{!doc.Doctor_Name__c}" style="width: 150px;"/>
+                    <apex:inputField value="{!doc.Name}" required="true" style="width: 150px;"/>
+                    <apex:inputField value="{!doc.Country__c}" style="width: 150px; text-align:center"/>
+                </apex:pageBlockSection>
+
+                <div class="slds-align_absolute-center slds-m-bottom_x-small">
+                    <apex:commandButton action="{!startSearch}"
+                                        value="{!$Label.Search}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton action="{!clear}"
+                                        value="{!$Label.Clear}"
+                                        reRender="doctorTable"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton action="{!getReportCSV}"
+                                        value="{!$Label.Export_to_CSV}"
+                                        reRender="doctorTable"
+                                        disabled="{!disableExport}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                    <apex:commandButton action="{!geReportXLS}"
+                                        value="{!$Label.Export_to_XLS}"
+                                        reRender="doctorTable"
+                                        disabled="{!disableExport}"
+                                        styleClass="slds-m-horizontal_xx-small slds-button slds-button_success"/>
+                </div>
+
+                <apex:pageBlock rendered="{!isVisible}">
+                    <apex:pageBlockTable value="{!doctors}" var="d">
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                {!$Label.Action}
+                            </apex:facet>
+                            <apex:outputLink title="" value="/apex/DoctorView?id={!d.id}"
+                                             style="font-weight:bold">View
+                            </apex:outputLink>&nbsp;|&nbsp;
+                            <apex:outputLink title="" value="/apex/DoctorEdit?id={!d.id}"
+                                             style="font-weight:bold">Edit
+                            </apex:outputLink>
+                            <apex:facet name="footer">
+                                {!PageNumber} / {!TotalPages}
+                            </apex:facet>
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                {!$Label.First_Name}
+                            </apex:facet>
+                            <apex:outputField value="{!d.Doctor_Name__c}"/>
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                {!$Label.Last_Name}
+                            </apex:facet>
+                            <apex:outputField value="{!d.Name}"/>
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                {!$Label.Country}
+                            </apex:facet>
+                            <apex:outputField value="{!d.Country__c}"/>
+
+                            <apex:facet name="footer">
+                                <apex:selectList value="{!doc.Search_Counter__c}" size="1" style="float:right">
+                                    <apex:selectOption itemLabel="5" itemValue="5"/>
+                                    <apex:selectOption itemLabel="10" itemValue="10"/>
+                                    <apex:selectOption itemLabel="15" itemValue="15"/>
+                                    <apex:actionSupport event="onchange" reRender="doctorTable"
+                                                        action="{!startSearch}"/>
+                                </apex:selectList>
+                            </apex:facet>
+                        </apex:column>
+                    </apex:pageBlockTable>
+
+                    <div class="slds-align_absolute-center">
+                        <apex:commandButton action="{!Beginning}" value="{!$Label.First_Page}"
+                                            reRender="doctorTable, buttonTableNavigation"
+                                            disabled="{!disablePrevious}"
+                                            styleClass="slds-button slds-button_success"/>
+                        <apex:commandButton action="{!Previous}" value="{!$Label.Previous_Page}"
+                                            reRender="doctorTable, buttonTableNavigation"
+                                            disabled="{!disablePrevious}"
+                                            styleClass="slds-button slds-button_success"/>
+                        <apex:commandButton action="{!Next}" value="{!$Label.Next_Page}"
+                                            reRender="doctorTable, buttonTableNavigation"
+                                            disabled="{!disableNext}"
+                                            styleClass="slds-button slds-button_success"/>
+                        <apex:commandButton action="{!End}" value="{!$Label.Last_Page}"
+                                            reRender="doctorTable, buttonTableNavigation"
+                                            disabled="{!disableNext}"
+                                            styleClass="slds-button slds-button_success"/>
+                    </div>
+
+                </apex:pageBlock>
+
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+</apex:page>

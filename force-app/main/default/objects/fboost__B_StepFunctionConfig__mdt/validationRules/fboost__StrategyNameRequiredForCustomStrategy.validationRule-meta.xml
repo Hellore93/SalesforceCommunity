@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__StrategyNameRequiredForCustomStrategy</fullName>
+    <active>true</active>
+    <description>The Async Custom Strategy is required for the Custom async execution strategy</description>
+    <errorConditionFormula>fboost__Async__c &amp;&amp; ISPICKVAL(fboost__AsyncStrategy__c,&apos;Custom&apos;) &amp;&amp; ISBLANK(fboost__AsyncCustomStrategy__c)</errorConditionFormula>
+    <errorDisplayField>fboost__AsyncCustomStrategy__c</errorDisplayField>
+    <errorMessage>The Async Custom Strategy is required for the Custom async execution strategy</errorMessage>
+</ValidationRule>

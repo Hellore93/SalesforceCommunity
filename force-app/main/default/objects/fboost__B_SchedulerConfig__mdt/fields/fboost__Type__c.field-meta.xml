@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fboost__Type__c</fullName>
+    <defaultValue>&quot;Custom&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Type of the scheduled job.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Type of the scheduled job</inlineHelpText>
+    <label>Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom</fullName>
+                <default>true</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Cleanup</fullName>
+                <default>false</default>
+                <label>Cleanup</label>
+            </value>
+            <value>
+                <fullName>AsyncJobQueueProcessor</fullName>
+                <default>false</default>
+                <label>Async Job Queue Processor</label>
+            </value>
+            <value>
+                <fullName>StepFunctionsGroup</fullName>
+                <default>false</default>
+                <label>Step Functions Group</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
