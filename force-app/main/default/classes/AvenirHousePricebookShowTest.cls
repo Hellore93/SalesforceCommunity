@@ -9,7 +9,7 @@ public with sharing class AvenirHousePricebookShowTest {
         insert prod;
 
         Pricebook2 standartPricebook = new Pricebook2(
-            Id=Test.getStandardPricebookId(), 
+            Id=Test.getStandardPricebookId(),
             IsActive=true);
         update standartPricebook;
 
