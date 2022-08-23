@@ -15,8 +15,7 @@ public with sharing class ComunityAvenirHouseOrderTest {
 
         Account acc = new Account (
             Name = 'Community Account',
-            First_Name__c = 'Important Test',
-            OwnerId = '0057Q000003AkIXQA0'
+            First_Name__c = 'Important Test'
         );
         insert acc;
 
@@ -39,8 +38,7 @@ public with sharing class ComunityAvenirHouseOrderTest {
             newOrder.Status = 'Draft';
             newOrder.EffectiveDate = Date.today();
             newOrder.Pricebook2Id = standardPricebook.Id;
-            newOrder.EndDate = Date.today().addDays(2);
-            newOrder.OwnerId = '0057Q000003AkIXQA0';        
+            newOrder.EndDate = Date.today().addDays(2);      
         insert newOrder;
 
         OrderItem orderItem = new OrderItem();
@@ -57,7 +55,6 @@ public with sharing class ComunityAvenirHouseOrderTest {
         caseTest.AccountId = acc.Id;
         caseTest.Comments = 'comm';
         caseTest.Order_Number__c = '123';
-        caseTest.OwnerId = '0057Q000003AkIXQA0';
         insert caseTest;
 
         List<PricebookEntry> standardPriceList = [SELECT Id FROM PricebookEntry LIMIT 2];
