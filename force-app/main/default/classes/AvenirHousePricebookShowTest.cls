@@ -10,34 +10,40 @@ public with sharing class AvenirHousePricebookShowTest {
 
         Pricebook2 standartPricebook = new Pricebook2(
             Id=Test.getStandardPricebookId(),
-            IsActive=true);
+            IsActive=true,
+            Discount_Start__c = Date.today().addDays(1),
+            Discount_Finish__c = Date.today().addDays(2));
         update standartPricebook;
 
         Pricebook2 pricebook1 = new Pricebook2(
-            Name = 'testPricebook1'
+            Name = 'testPricebook1',
+            Discount_Start__c = Date.today().addDays(3),
+            Discount_Finish__c = Date.today().addDays(5)
         );
         insert pricebook1;
 
         Pricebook2 pricebook2 = new Pricebook2(
-            Name = 'testPricebook2'
+            Name = 'testPricebook2',
+            Discount_Start__c = Date.today().addDays(3),
+            Discount_Finish__c = Date.today().addDays(5)
         );
         insert pricebook2;
 
         PricebookEntry standartPrice = new PricebookEntry(
             UnitPrice=500,
             Product2Id=prod.Id, 
-            Pricebook2Id=standartPricebook.Id, 
+            Pricebook2Id=[SELECT Id FROM Pricebook2 WHERE IsStandard = true LIMIT 1].Id, 
             IsActive=true
             );
         insert standartPrice;
 
-        PricebookEntry discountPrice = new PricebookEntry(
-            UnitPrice=400,
-            Product2Id=prod.Id, 
-            Pricebook2Id=[SELECT Id FROM Pricebook2 WHERE Name ='testPricebook1'].Id, 
-            IsActive=true
-            );
-        insert discountPrice;
+        // PricebookEntry discountPrice = new PricebookEntry(
+        //     UnitPrice=400,
+        //     Product2Id=prod.Id, 
+        //     Pricebook2Id=[SELECT Id FROM Pricebook2 WHERE Name ='testPricebook1'].Id, 
+        //     IsActive=true
+        //     );
+        // insert discountPrice;
 
     }
 
@@ -78,7 +84,14 @@ public with sharing class AvenirHousePricebookShowTest {
     @IsTest
     public static void shouldSaveNewProductInPricebook(){
         Pricebook2 pricebook = [SELECT Id FROM Pricebook2 WHERE Name = 'testPricebook1' LIMIT 1];
-        List<PricebookEntry> pricebookEntry = [SELECT Id, Product2Id, UnitPrice FROM PricebookEntry LIMIT2];
+        List<PricebookEntry> pricebookEntry = new List<PricebookEntry>();
+        PricebookEntry priceEntry = new PricebookEntry(
+            Product2Id = [SELECT Id FROM Product2 LIMIT 1].Id,
+            UnitPrice = 150
+        );
+        pricebookEntry.add(priceEntry);        
+
+
         AvenirHousePricebookShow.saveNewProductInPricebook(pricebookEntry, pricebook.Id);
     }
 }

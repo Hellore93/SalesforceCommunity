@@ -47,7 +47,9 @@ public with sharing class AvenirHouseCreateProductTest {
 
     @IsTest
     public static void shouldSaveProductPrice(){
-        Product2 prod = [SELECT Id FROM product2 LIMIT 1];
+        Product2 newProd = new Product2(Name = 'nowyProd');
+        insert newProd;
+        Product2 prod = [SELECT Id FROM Product2 WHERE Name = 'nowyProd' LIMIT 1];
         AvenirHouseCreateProduct.saveProductPrice(prod.Id, (Decimal)150);
     }
 
